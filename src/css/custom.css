@@ -1,0 +1,268 @@
+/* Primary_light: #3A24BD -> HSL: 249°, 68%, 44% 
+* Primary_dark: HSL: 249°, 68%, 59% 
+* +0, -4, -7, -13, +9, +17, +28 
+* +15, +11, +8, +2, +24, +32, +43 
+* Secondary: #AF3BEA -> HSL: 280°, 81%, 57% 
+*/
+
+:root {
+    --yellow: #ffd848;
+    --purple: #6e00f5;
+    --green: #0a993e;
+    --blue: #0073e6;
+    --magenta: #dc34dc;
+
+    --site-primary-hue-saturation: 210 100%;
+    --site-primary-hue-saturation-lightness: 45%;
+    --site-primary-light-hue-saturation: 47 100%;
+    --site-primary-light-hue-saturation-lightness: 64%;
+    --site-color-favorite-background: #f6fdfd;
+    --site-color-tooltip: #fff;
+    --site-color-tooltip-background: #353738;
+    --site-color-svg-icon-favorite: #af3bea;
+    --site-color-checkbox-checked-bg: hsl(167deg 56% 73% / 25%);
+    --site-color-feedback-background: #fff;
+
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    /* Use a darker color to ensure contrast, ideally we don't need important */
+    --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
+    --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
+
+    /* --ifm-navbar-item-padding-horizontal: 1rem; */
+    --ifm-navbar-padding-vertical: 0;
+    --ifm-navbar-height: 4rem;
+    --ifm-navbar-shadow: none;
+
+    --ifm-global-radius: 2.5px;
+
+    --ifm-alert-padding-horizontal: 1rem;
+    --ifm-alert-padding-vertical: 0.5rem;
+
+    --ifm-h-font-size: 2rem;
+    --ifm-heading-font-weight: var(--ifm-font-weight-semibold);
+    /* --ifm-heading-color:
+    --ifm-heading-font-family:
+    --ifm-heading-line-height:
+    --ifm-heading-margin-top:
+    --ifm-heading-margin-bottom: */
+    --ifm-h1-font-size: calc(var(--ifm-h-font-size) * 1);
+    --ifm-h2-font-size: calc(var(--ifm-h-font-size) * 0.75);
+    --ifm-h3-font-size: calc(var(--ifm-h-font-size) * 0.625);
+    --ifm-h4-font-size: calc(var(--ifm-h-font-size) * 0.5);
+    --ifm-h5-font-size: calc(var(--ifm-h-font-size) * 0.4375);
+    --ifm-h6-font-size: calc(var(--ifm-h-font-size) * 0.524);
+
+    /* --ifm-font-family-base: var(--sans); */
+    --ifm-font-family-serif: var(--serif);
+    /* --ifm-font-family-monospace: var(--mono); */
+
+    --ifm-code-font-size: 80%;
+    --ifm-pre-line-height: 1.5;
+
+    --sans: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Helvetica Neue,
+        sans-serif;
+    --serif: Tiempos, serif;
+    --mono: GT America Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+        monospace;
+}
+
+.markdown > h1:first-child {
+    --ifm-h1-font-size: calc(var(--ifm-h-font-size) * 1);
+}
+
+.markdown > h1 {
+    --ifm-h1-font-size: calc(var(--ifm-h-font-size) * 1);
+}
+
+.markdown > h2 {
+    --ifm-h2-font-size: calc(var(--ifm-h-font-size) * 0.75);
+}
+
+.markdown > h3 {
+    --ifm-h3-font-size: calc(var(--ifm-h-font-size) * 0.625);
+}
+
+.markdown > div.theme-code-block {
+    box-shadow: none;
+    border-radius: 2.5px;
+}
+
+[data-theme="light"] {
+    --ifm-color-primary: hsl(
+        var(--site-primary-hue-saturation)
+            calc(var(--site-primary-hue-saturation-lightness))
+    );
+    --ifm-color-primary-dark: hsl(
+        var(--site-primary-hue-saturation)
+            calc(var(--site-primary-hue-saturation-lightness) - 4%)
+    );
+    --ifm-color-primary-darker: hsl(
+        var(--site-primary-hue-saturation)
+            calc(var(--site-primary-hue-saturation-lightness) - 7%)
+    );
+    --ifm-color-primary-darkest: hsl(
+        var(--site-primary-hue-saturation)
+            calc(var(--site-primary-hue-saturation-lightness) - 13%)
+    );
+
+    --ifm-color-primary-light: hsl(
+        var(--site-primary-hue-saturation)
+            calc(var(--site-primary-hue-saturation-lightness) + 9%)
+    );
+    --ifm-color-primary-lighter: hsl(
+        var(--site-primary-hue-saturation)
+            calc(var(--site-primary-hue-saturation-lightness) + 17%)
+    );
+    --ifm-color-primary-lightest: hsl(
+        var(--site-primary-hue-saturation)
+            calc(var(--site-primary-hue-saturation-lightness) + 28%)
+    );
+
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] ::-moz-selection {
+    /* Code for Firefox */
+    background: hsl(
+        var(--site-primary-light-hue-saturation)
+            calc(var(--site-primary-light-hue-saturation-lightness))
+    );
+}
+
+[data-theme="light"] ::selection {
+    background: hsl(
+        var(--site-primary-light-hue-saturation)
+            calc(var(--site-primary-light-hue-saturation-lightness))
+    );
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+    --ifm-color-primary: hsl(
+        var(--site-primary-light-hue-saturation)
+            calc(var(--site-primary-light-hue-saturation-lightness))
+    );
+    --ifm-color-primary-dark: hsl(
+        var(--site-primary-light-hue-saturation)
+            calc(var(--site-primary-light-hue-saturation-lightness) + 4%)
+    );
+    --ifm-color-primary-darker: hsl(
+        var(--site-primary-light-hue-saturation)
+            calc(var(--site-primary-light-hue-saturation-lightness) + 7%)
+    );
+    --ifm-color-primary-darkest: hsl(
+        var(--site-primary-light-hue-saturation)
+            calc(var(--site-primary-light-hue-saturation-lightness) + 13%)
+    );
+
+    --ifm-color-primary-light: hsl(
+        var(--site-primary-light-hue-saturation)
+            calc(var(--site-primary-light-hue-saturation-lightness) + 9%)
+    );
+    --ifm-color-primary-lighter: hsl(
+        var(--site-primary-light-hue-saturation)
+            calc(var(--site-primary-light-hue-saturation-lightness) + 17%)
+    );
+    --ifm-color-primary-lightest: hsl(
+        var(--site-primary-light-hue-saturation)
+            calc(var(--site-primary-light-hue-saturation-lightness) + 28%)
+    );
+
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] ::-moz-selection {
+    /* Code for Firefox */
+    background: hsl(
+        var(--site-primary-hue-saturation)
+            calc(var(--site-primary-hue-saturation-lightness))
+    );
+}
+
+[data-theme="dark"] ::selection {
+    background: hsl(
+        var(--site-primary-hue-saturation)
+            calc(var(--site-primary-hue-saturation-lightness))
+    );
+}
+
+.navbar {
+    border-bottom: none !important;
+}
+
+.navbar__item {
+    font-weight: var(--ifm-font-weight-normal);
+    font-size: 90%;
+}
+
+.theme-doc-sidebar-container {
+    /* border-right: 1px solid var(--ifm-toc-border-color); */
+    border-right: none !important;
+}
+
+@media (min-width: 425px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 997px) {
+    article > .theme-doc-markdown {
+        padding-left: 3rem;
+        padding-right: 1rem;
+    }
+}
+
+div.navbar__items > div > button.clean-btn {
+    width: 20px;
+    height: 20px;
+    margin: 5px 15px;
+}
+
+aside.theme-doc-sidebar-container > div > nav.menu.thin-scrollbar {
+    padding-right: 2rem;
+}
+
+ul.theme-doc-sidebar-menu.menu__list
+    > li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-1.menu__list-item:first-child
+    > a.menu__link,
+a.menu__link.menu__link--active {
+    /* color: var(--ifm-color-content); */
+    font-weight: var(--ifm-font-weight-semibold);
+    font-size: calc(var(--ifm-font-size-base));
+    padding-left: 0.5rem;
+}
+
+li.theme-doc-sidebar-item-link.menu__list-item > a.menu__link {
+    font-weight: var(--ifm-font-weight-normal);
+    color: var(--ifm-color-content);
+    font-size: calc(var(--ifm-font-size-base) * 0.9);
+    border-radius: 0;
+    padding-left: 1rem;
+}
+
+li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-1.menu__list-item
+    > a.menu__link.menu__link--active {
+    color: var(--ifm-menu-color-active);
+}
+
+nav.pagination-nav > a.pagination-nav__link {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+nav.pagination-nav > a.pagination-nav__link > div.pagination-nav__sublabel {
+    font-weight: var(--ifm-font-weight-normal);
+    color: var(--ifm-color-content);
+    font-size: 80%;
+}
+
+nav.pagination-nav > a.pagination-nav__link > div.pagination-nav__label {
+    font-weight: var(--ifm-font-weight-normal);
+    /* color: var(--ifm-color-content-secondary); */
+    color: var(--ifm-color-content);
+    font-size: var(--ifm-h5-font-size);
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
