@@ -1,41 +1,27 @@
-# Website
+# krishadi.com
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+## Local Development
 
-### Installation
-
-```
-$ yarn
-```
-
-### Local Development
+**Start the development server:**
 
 ```
-$ yarn start
+$ npm run start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+**Build the static website:**
 
 ```
-$ yarn build
+$ npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Deployment
-
-Using SSH:
+**Deploy the build files to brach `gh-pages`:**
 
 ```
-$ USE_SSH=true yarn deploy
+$ GIT_USER=krish-adi GIT_PASS=$GIT_PASS npm run deploy
 ```
 
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+This command is a convenient way to build the website and push to the `gh-pages` branch.
