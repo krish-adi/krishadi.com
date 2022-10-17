@@ -4,6 +4,8 @@ slug: "/"
 
 # Blog posts
 
+Some general writings, tutorials, thoughts, on stuff I've built or ones I like.
+
 ---
 
 ### [Greppo introduction &#10132;](/blog/greppo-introduction)
