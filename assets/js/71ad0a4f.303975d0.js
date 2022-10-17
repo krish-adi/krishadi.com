@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkrishadi_com=self.webpackChunkkrishadi_com||[]).push([[94],{8306:e=>{e.exports=JSON.parse('[{"label":"greppo","permalink":"/blog/tags/greppo","count":2},{"label":"gee","permalink":"/blog/tags/gee","count":1},{"label":"demo","permalink":"/blog/tags/demo","count":2},{"label":"tutorial","permalink":"/blog/tags/tutorial","count":2}]')}}]);
