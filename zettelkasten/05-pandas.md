@@ -1,10 +1,10 @@
 ---
+slug: pandas
 title: Pandas
 description: Pandas quick reference cheat-sheet
-date: 2022-04-19
-modified: 2022-04-20
-category: zettelkasten
-layout: post
+published: 4/19/2022
+last_update:
+    date: 4/20/2022
 ---
 
 # Pandas
@@ -12,10 +12,11 @@ layout: post
 Quick reference to the Python Pandas library.
 
 ```shell
-$~ > pip install pandas
+$ pip install pandas
 ```
 
 Import the package into your `.py` file.
+
 ```python
 import pandas as pd
 ```
@@ -29,7 +30,7 @@ df = pd.DataFrame({'Col_1': [34, 11], 'Col_2': [46, 79]})
 ```
 
 ```python
-pd.DataFrame({'Col_1': ['some_data_1-1', 12], 
+pd.DataFrame({'Col_1': ['some_data_1-1', 12],
               'Col_2': ['some_data_1-2', 22]},
              index=['Row 1', 'Row 2'])
 ```
@@ -74,7 +75,7 @@ df_data.to_csv('to_data.csv')
 ## Indexing, selecting and assigning
 
 ```python
-df_data = pd.DataFrame({'Col1': ['some_data_1_1', 12], 
+df_data = pd.DataFrame({'Col1': ['some_data_1_1', 12],
 			              'Col2': ['some_data_1_2', 22]},
 			             index=['Row1', 'Row2'])
 ```
@@ -104,14 +105,14 @@ Using `iloc`, index based selection:
 df_data.iloc[0]
 
 # Access the data of all rows and first column
-df_data.iloc[:, 0] 
+df_data.iloc[:, 0]
 
-df_data.iloc[1:3, 0] 
+df_data.iloc[1:3, 0]
 
 # indexing here is done based on the index column value
-df_data.iloc[[1,2,3], 0] 
+df_data.iloc[[1,2,3], 0]
 
-df_data.iloc[-5, 0] 
+df_data.iloc[-5, 0]
 
 df_data.iloc[-5] # last 5 rows of all columns
 ```
@@ -141,10 +142,10 @@ df_data.set_index('col1')
 ```python
 reviews.country == 'Italy'
 
->>> 
+>>>
 0          True
 1         False
-          ...  
+          ...
 129969    False
 129970    False
 Name: country, Length: 129971, dtype: bool
@@ -171,9 +172,9 @@ reviews.loc[(reviews.country == 'Italy') | (reviews.points >= 90)]
 reviews.loc[reviews.country.isin(['Italy', 'France'])]
 ```
 
- **`isnull` and `notnull`**
- 
- Methods lets you highlight values which are (or are not) empty (`NaN`). For example, to filter out wines lacking a price tag in the dataset:
+**`isnull` and `notnull`**
+
+Methods lets you highlight values which are (or are not) empty (`NaN`). For example, to filter out wines lacking a price tag in the dataset:
 
 ```python
 # filters with the conditional
@@ -192,12 +193,11 @@ reviews['index_backwards'] = range(len(reviews), 0, -1)
 >>>
 0         129971
 1         129970
-           ...  
+           ...
 129969         2
 129970         1
 Name: index_backwards, Length: 129971, dtype: int64
 ```
-
 
 ## Summary functions & maps
 
@@ -209,7 +209,7 @@ reviews.points.describe()
 >>>
 count    129971.000000
 mean         88.447138
-             ...      
+             ...
 75%          91.000000
 max         100.000000
 Name: points, Length: 8, dtype: float64
@@ -234,7 +234,7 @@ reviews.taster_name.value_counts()
 
 **Map functions**
 
-[`map()`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.map.html) 
+[`map()`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.map.html)
 
 ```python
 review_points_mean = reviews.points.mean()
@@ -255,9 +255,9 @@ def remean_points(row):
 reviews.apply(remean_points, axis='columns')
 ```
 
-If we had called `reviews.apply()` with `axis='index'`, then instead of passing a function to transform each row, we would need to give a function to transform each _column_.
+If we had called `reviews.apply()` with `axis='index'`, then instead of passing a function to transform each row, we would need to give a function to transform each *column*.
 
-Note that `map()` and `apply()` return new, transformed Series and DataFrames, respectively. They don't modify the original data they're called on. 
+Note that `map()` and `apply()` return new, transformed Series and DataFrames, respectively. They don't modify the original data they're called on.
 
 **Built-in mapping operations**
 
@@ -268,7 +268,7 @@ reviews.points - review_points_mean
 >>>
 0        -1.447138
 1        -1.447138
-            ...   
+            ...
 129969    1.552862
 129970    1.552862
 Name: points, Length: 129971, dtype: float64
@@ -279,13 +279,13 @@ reviews.country + " - " + reviews.region_1
 >>>
 0            Italy - Etna
 1                     NaN
-               ...       
+               ...
 129969    France - Alsace
 129970    France - Alsace
 Length: 129971, dtype: object
 ```
 
-These operators are faster than `map()` or `apply()` because they use speed ups built into pandas. All of the standard Python operators (`>`, `<`, `==`, and so on) work in this manner. They are not as flexible as `map()` or `apply()`, for complex operations and conditions. 
+These operators are faster than `map()` or `apply()` because they use speed ups built into pandas. All of the standard Python operators (`>`, `<`, `==`, and so on) work in this manner. They are not as flexible as `map()` or `apply()`, for complex operations and conditions.
 
 ## Grouping and sorting
 
@@ -301,7 +301,7 @@ reviews.groupby('points').price.min()
 points
 80      5.0
 81      5.0
-       ... 
+       ...
 99     44.0
 100    80.0
 Name: price, Length: 21, dtype: float64
@@ -316,7 +316,7 @@ reviews.groupby('winery').apply(lambda df: df.title.iloc[0])
 winery
 1+1=3                          1+1=3 NV Rosé Sparkling (Cava)
 10 Knots                 10 Knots 2010 Viognier (Paso Robles)
-                                  ...                        
+                                  ...
 àMaurice    àMaurice 2013 Fred Estate Syrah (Walla Walla V...
 Štoka                         Štoka 2009 Izbrani Teran (Kras)
 Length: 16757, dtype: object
@@ -364,7 +364,7 @@ countries_reviewed.sort_values(by=['country', 'len'])
 ## Dtype
 
 ```python
-# Returns the data type. 
+# Returns the data type.
 reviews.price.dtype
 
 # Convert a int64 to float64
@@ -373,7 +373,7 @@ reviews.points.astype('float64')
 
 **Missing data**
 
-Missing values are given `NaN`. 
+Missing values are given `NaN`.
 
 ```python
 # selecting a null from a column.
@@ -389,7 +389,7 @@ reviews.region_2.fillna("Unknown")
 
 **Backfill strategy**
 
-Fill each missing value with the first non-null value that appears sometime after the given record in the database. 
+Fill each missing value with the first non-null value that appears sometime after the given record in the database.
 
 **Replace**
 
@@ -415,7 +415,7 @@ Using a `dict` is most convenient.
 
 **Combining**
 
- Pandas has three core methods for doing this. In order of increasing complexity, these are `concat()`, `join()`, and `merge()`. Most of what `merge()` can do can also be done more simply with `join()`.
+Pandas has three core methods for doing this. In order of increasing complexity, these are `concat()`, `join()`, and `merge()`. Most of what `merge()` can do can also be done more simply with `join()`.
 
 `concat` when the columns are the same.
 
@@ -439,143 +439,15 @@ left.join(right, lsuffix='_CAN', rsuffix='_UK')
 
 **References**
 
-- Pandas documentation
-- [Kaggle](https://www.kaggle.com/)
+-   Pandas documentation
+-   [Kaggle](https://www.kaggle.com/)
 
-**Sample DataFrame:** `reviews` 
-<!-- 
-<table class="dataframe">
-    <thead>
-        <tr style="text-align: right">
-            <th></th>
-            <th>country</th>
-            <th>description</th>
-            <th>designation</th>
-            <th>points</th>
-            <th>price</th>
-            <th>province</th>
-            <th>region_1</th>
-            <th>region_2</th>
-            <th>taster_name</th>
-            <th>taster_twitter_handle</th>
-            <th>title</th>
-            <th>variety</th>
-            <th>winery</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>0</th>
-            <td>Italy</td>
-            <td>
-                Aromas include tropical fruit, broom, brimstone and
-                dried herb. The palate isn't overly expressive,
-                offering unripened apple, citrus and dried sage
-                alongside brisk acidity.
-            </td>
-            <td>Vulkà Bianco</td>
-            <td>87</td>
-            <td>NaN</td>
-            <td>Sicily &amp; Sardinia</td>
-            <td>Etna</td>
-            <td>NaN</td>
-            <td>Kerin O’Keefe</td>
-            <td>@kerinokeefe</td>
-            <td>Nicosia 2013 Vulkà Bianco (Etna)</td>
-            <td>White Blend</td>
-            <td>Nicosia</td>
-        </tr>
-        <tr>
-            <th>1</th>
-            <td>Portugal</td>
-            <td>
-                This is ripe and fruity, a wine that is smooth while
-                still structured. Firm tannins are filled out with
-                juicy red berry fruits and freshened with acidity.
-                It's already drinkable, although it will certainly
-                be better from 2016.
-            </td>
-            <td>Avidagos</td>
-            <td>87</td>
-            <td>15.0</td>
-            <td>Douro</td>
-            <td>NaN</td>
-            <td>NaN</td>
-            <td>Roger Voss</td>
-            <td>@vossroger</td>
-            <td>Quinta dos Avidagos 2011 Avidagos Red (Douro)</td>
-            <td>Portuguese Red</td>
-            <td>Quinta dos Avidagos</td>
-        </tr>
-        <tr>
-            <th>2</th>
-            <td>US</td>
-            <td>
-                Tart and snappy, the flavors of lime flesh and rind
-                dominate. Some green pineapple pokes through, with
-                crisp acidity underscoring the flavors. The wine was
-                all stainless-steel fermented.
-            </td>
-            <td>NaN</td>
-            <td>87</td>
-            <td>14.0</td>
-            <td>Oregon</td>
-            <td>Willamette Valley</td>
-            <td>Willamette Valley</td>
-            <td>Paul Gregutt</td>
-            <td>@paulgwine</td>
-            <td>Rainstorm 2013 Pinot Gris (Willamette Valley)</td>
-            <td>Pinot Gris</td>
-            <td>Rainstorm</td>
-        </tr>
-        <tr>
-            <th>3</th>
-            <td>US</td>
-            <td>
-                Pineapple rind, lemon pith and orange blossom start
-                off the aromas. The palate is a bit more opulent,
-                with notes of honey-drizzled guava and mango giving
-                way to a slightly astringent, semidry finish.
-            </td>
-            <td>Reserve Late Harvest</td>
-            <td>87</td>
-            <td>13.0</td>
-            <td>Michigan</td>
-            <td>Lake Michigan Shore</td>
-            <td>NaN</td>
-            <td>Alexander Peartree</td>
-            <td>NaN</td>
-            <td>
-                St. Julian 2013 Reserve Late Harvest Riesling (Lake
-                Michigan Shore)
-            </td>
-            <td>Riesling</td>
-            <td>St. Julian</td>
-        </tr>
-        <tr>
-            <th>4</th>
-            <td>US</td>
-            <td>
-                Much like the regular bottling from 2012, this comes
-                across as rather rough and tannic, with rustic,
-                earthy, herbal characteristics. Nonetheless, if you
-                think of it as a pleasantly unfussy country wine,
-                it's a good companion to a hearty winter stew.
-            </td>
-            <td>Vintner's Reserve Wild Child Block</td>
-            <td>87</td>
-            <td>65.0</td>
-            <td>Oregon</td>
-            <td>Willamette Valley</td>
-            <td>Willamette Valley</td>
-            <td>Paul Gregutt</td>
-            <td>@paulgwine</td>
-            <td>
-                Sweet Cheeks 2012 Vintner's Reserve Wild Child Block
-                Pinot Noir (Willamette Valley)
-            </td>
-            <td>Pinot Noir</td>
-            <td>Sweet Cheeks</td>
-        </tr>
-    </tbody>
-</table> -->
+**Sample DataFrame:** `reviews`
+
+| country | description | designation | points | price | province | region_1 | region_2 | taster_name | taster_twitter_handle | title | variety | winery |
+| ------- | ----------- | ----------- | ------ | ----- | -------- | -------- | -------- | ----------- | --------------------- | ----- | ------- | ------ |
+| 0       | Italy       | Aromas include tropical fruit, broom, brimstone and dried herb. The palate isn't overly expressive offering unripened apple, citrus and dried sage alongside brisk acidity. | Vulkà Bianco | 87 | NaN | Sicily &amp; Sardinia | Etna | NaN | Kerin O’Keefe | @kerinokeefe | Nicosia 2013 Vulkà Bianco (Etna) | White Blend | Nicosia |
+| 1 | Portugal | This is ripe and fruity, a wine that is smooth while still structured. Firm tannins are filled out with juicy red berry fruits and freshened with acidity. It's already drinkable, although it will certainly be better from 2016. | Avidagos | 87 | 15.0 | Douro | NaN | NaN | Roger Voss | @vossroger | Quinta dos Avidagos 2011 Avidagos Red (Douro) | Portuguese Red | Quinta dos Avidagos |
+| 2 | US | Tart and snappy, the flavors of lime flesh and rind dominate. Some green pineapple pokes through, with crisp acidity underscoring the flavors. The wine was all stainless-steel fermented. | NaN | 87 | 14.0 | Oregon | Willamette Valley | Willamette Valley | Paul Gregutt | @paulgwine | Rainstorm 2013 Pinot Gris (Willamette Valley) | Pinot Gris | Rainstorm |
+| 3 | US | Pineapple rind, lemon pith and orange blossom start off the aromas. The palate is a bit more opulent, with notes of honey-drizzled guava and mango giving way to a slightly astringent, semidry finish. | Reserve Late Harvest | 87 | 13.0 | Michigan | Lake Michigan Shore | NaN | Alexander Peartree | NaN | St. Julian 2013 Reserve Late Harvest Riesling (Lake Michigan Shore) | Riesling | St. Julian |
+| 4 | US | Much like the regular bottling from 2012, this comes across as rather rough and tannic, with rustic, earthy, herbal characteristics. Nonetheless, if you think of it as a pleasantly unfussy country wine, it's a good companion to a hearty winter stew. | Vintner's Reserve Wild Child Block | 87 | 65.0 | Oregon | Willamette Valley | Willamette Valley | Paul Gregutt | @paulgwine | Sweet Cheeks 2012 Vintner's Reserve Wild Child Block Pinot Noir (Willamette Valley) | Pinot Noir | Sweet Cheeks |

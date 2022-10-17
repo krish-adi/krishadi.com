@@ -25,3 +25,8 @@ $ GIT_USER=krish-adi GIT_PASS=$GIT_PASS DEPLOYMENT_BRANCH=pages npm run deploy
 ```
 
 This command is a convenient way to build the website and push to the `pages` branch.
+
+## Tools used: 
+
+1. https://tableconvert.com/html-to-json
+2. https://favicon.io/favicon-converter/

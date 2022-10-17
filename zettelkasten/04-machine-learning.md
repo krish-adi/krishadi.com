@@ -1,10 +1,10 @@
 ---
+slug: machine-learning
 title: Machine Learning
 description: Scikit-learn Python quick reference cheat sheet
-date: 2022-04-18
-modified: 2022-04-21
-category: zettelkasten
-layout: post
+published: 4/18/2022
+last_update:
+    date: 2/21/2022
 ---
 
 # Machine Learning
@@ -16,7 +16,7 @@ layout: post
 melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv'
 
 # read the data and store data in DataFrame titled melbourne_data
-melbourne_data = pd.read_csv(melbourne_file_path) 
+melbourne_data = pd.read_csv(melbourne_file_path)
 
 # print a summary of the data in Melbourne data
 melbourne_data.describe()
@@ -26,9 +26,9 @@ melbourne_data.describe()
 
 ```python
 # The Melbourne data has some missing values (some houses for which some variables weren't recorded.)
-# We'll learn to handle missing values in a later tutorial.  
-# Your Iowa data doesn't have missing values in the columns you use. 
-# So we will take the simplest option for now, and drop houses from our data. 
+# We'll learn to handle missing values in a later tutorial.
+# Your Iowa data doesn't have missing values in the columns you use.
+# So we will take the simplest option for now, and drop houses from our data.
 # Don't worry about this much for now, though the code is:
 
 # dropna drops missing values (think of na as "not available")
@@ -119,9 +119,9 @@ print(mean_absolute_error(val_y, val_predictions))
 
 ## Different models
 
-There are different models that can be explored. Scikit-learn's [documentation](http://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html) that the decision tree model has many options. 
+There are different models that can be explored. Scikit-learn's [documentation](http://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html) that the decision tree model has many options.
 
-A phenomenon called **overfitting**, where a model matches the training data almost perfectly, but does poorly in validation and other new data.  When a model fails to capture important distinctions and patterns in the data, so it performs poorly even in training data, that is called **underfitting**.
+A phenomenon called **overfitting**, where a model matches the training data almost perfectly, but does poorly in validation and other new data. When a model fails to capture important distinctions and patterns in the data, so it performs poorly even in training data, that is called **underfitting**.
 
 ![[under-over-fit.png.png]]
 
@@ -146,10 +146,10 @@ for max_leaf_nodes in [5, 50, 500, 5000]:
     print("Max leaf nodes: %d  \t\t Mean Absolute Error:  %d" %(max_leaf_nodes, my_mae))
 ```
 
-Max leaf nodes: 5  		 Mean Absolute Error:  347380
-Max leaf nodes: 50  		 Mean Absolute Error:  258171
-Max leaf nodes: 500  		 Mean Absolute Error:  243495
-Max leaf nodes: 5000  	 Mean Absolute Error:  254983
+Max leaf nodes: 5 Mean Absolute Error: 347380
+Max leaf nodes: 50 Mean Absolute Error: 258171
+Max leaf nodes: 500 Mean Absolute Error: 243495
+Max leaf nodes: 5000 Mean Absolute Error: 254983
 
 ## Random forests
 
@@ -183,7 +183,8 @@ def score_dataset(X_train, X_valid, y_train, y_valid):
 
 1. **Drop columns and/or rows** with missing values
 2. **Imputation** fills in the missing values with some number.
-3. **Extended imputation** we impute the missing values, as before. And, additionally, for each column with missing entries in the original dataset, we add a new column that shows the location of the imputed entries. Adding `True` or `False ` to the imputed data by row or column. 
+3. **Extended imputation** we impute the missing values, as before. And, additionally, for each column with missing entries in the original dataset, we add a new column that shows the location of the imputed entries. Adding `True` or `False ` to the imputed data by row or column.
+
 ```python
 # Get names of columns with missing values
 cols_with_missing = [col for col in X_train.columns
@@ -199,7 +200,7 @@ from sklearn.impute import SimpleImputer
 
 # Imputation
 # SimpleIMputer to replace it by the mean value along the column.
-my_imputer = SimpleImputer() 
+my_imputer = SimpleImputer()
 imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train))
 imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))
 
@@ -260,7 +261,7 @@ print(score_dataset(drop_X_train, drop_X_valid, y_train, y_valid))
 ```python
 from sklearn.preprocessing import OrdinalEncoder
 
-# Make copy to avoid changing original data 
+# Make copy to avoid changing original data
 label_X_train = X_train.copy()
 label_X_valid = X_valid.copy()
 
@@ -269,7 +270,7 @@ ordinal_encoder = OrdinalEncoder()
 label_X_train[object_cols] = ordinal_encoder.fit_transform(X_train[object_cols])
 label_X_valid[object_cols] = ordinal_encoder.transform(X_valid[object_cols])
 
-print("MAE from Approach 2 (Ordinal Encoding):") 
+print("MAE from Approach 2 (Ordinal Encoding):")
 print(score_dataset(label_X_train, label_X_valid, y_train, y_valid))
 ```
 
@@ -300,7 +301,7 @@ num_X_valid = X_valid.drop(object_cols, axis=1)
 OH_X_train = pd.concat([num_X_train, OH_cols_train], axis=1) # axis = 1 since they share same row numbers.
 OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=1)
 
-print("MAE from Approach 3 (One-Hot Encoding):") 
+print("MAE from Approach 3 (One-Hot Encoding):")
 print(score_dataset(OH_X_train, OH_X_valid, y_train, y_valid))
 ```
 
@@ -311,12 +312,12 @@ Usage of `set`
 object_cols = [col for col in X_train.columns if X_train[col].dtype == "object"]
 
 # Columns that can be safely ordinal encoded
-good_label_cols = [col for col in object_cols if 
+good_label_cols = [col for col in object_cols if
                    set(X_valid[col]).issubset(set(X_train[col]))]
-        
+
 # Problematic columns that will be dropped from the dataset
 bad_label_cols = list(set(object_cols)-set(good_label_cols))
-        
+
 print('Categorical columns that will be ordinal encoded:', good_label_cols)
 print('\nCategorical columns that will be dropped from the dataset:', bad_label_cols)
 ```
@@ -390,7 +391,7 @@ my_pipeline = Pipeline(steps=[('preprocessor', preprocessor),
                               ('model', model)
                              ])
 
-# Preprocessing of training data, fit model 
+# Preprocessing of training data, fit model
 my_pipeline.fit(X_train, y_train)
 
 # Preprocessing of validation data, get predictions
@@ -439,13 +440,13 @@ print("MAE scores:\n", scores)
 
 **Target leakage**
 
-**Target leakage** occurs when your predictors include data that will not be available at the time you make predictions. It is important to think about target leakage in terms of the _timing or chronological order_ that data becomes available, not merely whether a feature helps make good predictions.
+**Target leakage** occurs when your predictors include data that will not be available at the time you make predictions. It is important to think about target leakage in terms of the *timing or chronological order* that data becomes available, not merely whether a feature helps make good predictions.
 
-How to detect this? If a data feature changes or is influenced by an event after the value of the target is noted. People testing positive for covid and a column with taking specific medications for covid. 
+How to detect this? If a data feature changes or is influenced by an event after the value of the target is noted. People testing positive for covid and a column with taking specific medications for covid.
 
 **Train-Test Contamination**
 
-Validation is meant to be a measure of how the model does on data that it hasn't considered before. You can corrupt this process in subtle ways if the validation data affects the preprocessing behavior. This is sometimes called **train-test contamination**. If your validation is based on a simple train-test split, exclude the validation data from any type of _fitting_, including the fitting of preprocessing steps.
+Validation is meant to be a measure of how the model does on data that it hasn't considered before. You can corrupt this process in subtle ways if the validation data affects the preprocessing behavior. This is sometimes called **train-test contamination**. If your validation is based on a simple train-test split, exclude the validation data from any type of *fitting*, including the fitting of preprocessing steps.
 
 ```python
 from sklearn.pipeline import make_pipeline
@@ -454,7 +455,7 @@ from sklearn.model_selection import cross_val_score
 
 # Since there is no preprocessing, we don't need a pipeline (used anyway as best practice!)
 my_pipeline = make_pipeline(RandomForestClassifier(n_estimators=100))
-cv_scores = cross_val_score(my_pipeline, X, y, 
+cv_scores = cross_val_score(my_pipeline, X, y,
                             cv=5,
                             scoring='accuracy')
 
@@ -477,7 +478,7 @@ potential_leaks = ['expenditure', 'share', 'active', 'majorcards']
 X2 = X.drop(potential_leaks, axis=1)
 
 # Evaluate the model with leaky predictors removed
-cv_scores = cross_val_score(my_pipeline, X2, y, 
+cv_scores = cross_val_score(my_pipeline, X2, y,
                             cv=5,
                             scoring='accuracy')
 
@@ -518,7 +519,7 @@ print("Mean Absolute Error: " + str(mean_absolute_error(predictions, y_valid)))
 
 ### [`n_estimators`](https://www.kaggle.com/code/alexisbcook/xgboost#n_estimators)
 
-`n_estimators` specifies how many times to go through the modeling cycle, and equal to the number of models that we include in the ensemble. Too _low_ a value causes _underfitting_, Too _high_ a value causes _overfitting_. Typical values range from 100-1000, though this depends a lot on the `learning_rate` parameter discussed below.
+`n_estimators` specifies how many times to go through the modeling cycle, and equal to the number of models that we include in the ensemble. Too *low* a value causes *underfitting*, Too *high* a value causes *overfitting*. Typical values range from 100-1000, though this depends a lot on the `learning_rate` parameter discussed below.
 
 ```python
 my_model = XGBRegressor(n_estimators=500)
@@ -531,8 +532,8 @@ my_model.fit(X_train, y_train)
 
 ```python
 my_model = XGBRegressor(n_estimators=500)
-my_model.fit(X_train, y_train, 
-             early_stopping_rounds=5, 
+my_model.fit(X_train, y_train,
+             early_stopping_rounds=5,
              eval_set=[(X_valid, y_valid)],
              verbose=False)
 ```
@@ -543,9 +544,9 @@ We can multiply the predictions from each model by a small number (known as the�
 
 ```python
 my_model = XGBRegressor(n_estimators=1000, learning_rate=0.05)
-my_model.fit(X_train, y_train, 
-             early_stopping_rounds=5, 
-             eval_set=[(X_valid, y_valid)], 
+my_model.fit(X_train, y_train,
+             early_stopping_rounds=5,
+             eval_set=[(X_valid, y_valid)],
              verbose=False)
 ```
 
@@ -555,17 +556,15 @@ You can use parallelism to build your models faster. Set the parameter `n_jobs`
 
 ```python
 my_model = XGBRegressor(n_estimators=1000, learning_rate=0.05, n_jobs=4)
-my_model.fit(X_train, y_train, 
-             early_stopping_rounds=5, 
-             eval_set=[(X_valid, y_valid)], 
+my_model.fit(X_train, y_train,
+             early_stopping_rounds=5,
+             eval_set=[(X_valid, y_valid)],
              verbose=False)
 ```
-
-
 
 ---
 
 **References**
 
-- Scikit documentation
-- [Kaggle](https://www.kaggle.com/)
+-   Scikit documentation
+-   [Kaggle](https://www.kaggle.com/)

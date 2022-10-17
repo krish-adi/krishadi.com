@@ -12,7 +12,7 @@ import GitHubGist from "../components/GitHubGist";
 
 # Geospatial app with Google Earth Engine and Greppo
 
-March 3, 2022
+_March 3, 2022_
 
 > **Using Google Earth Engine without a lot of JavaScript experience is hard. Greppo lets you overcome this in Python.**
 
@@ -31,7 +31,11 @@ Greppo is the perfect tool to bridge this gap.
 
 > In this blog post I will be building a web-application with Greppo with a a popular GEE use-case with DEM(Digital Elevation Model). I will walk you through understanding the basics of GEE, the client-server model, how the API works and the GEE data model. With that background, the post will use Greppo to create an app using GEE’s Python interface and highlight Greppo’s mental model and easy to use interface.
 
-**_Note: All the code here is in Python. They are ported from the GEE’s sample JavaScript code in the_** [**_documentation_**](https://developers.google.com/earth-engine/guides?hl=en)**_._**
+:::info
+
+All the code here is in Python. They are ported from the GEE’s sample JavaScript code in the [documentation](https://developers.google.com/earth-engine/guides?hl=en)
+
+:::
 
 ## Getting started
 
@@ -47,7 +51,11 @@ $ pip install earthengine-api greppo
 
 The code for the web-app will go into **_app.py,_** and the app is served and run through the command line using the command `greppo serve app.py` .
 
-> Note: To run the `greppo` command in the command line, you need to activate the python environment where greppo is installed. The file app.py can be renamed to anything, but be sure to be in the folder when you run the command `greppo serve app.py` or in a relative folder structure `greppo serve /demo/folder/app.py` .
+:::note
+
+To run the `greppo` command in the command line, you need to activate the python environment where greppo is installed. The file app.py can be renamed to anything, but be sure to be in the folder when you run the command `greppo serve app.py` or in a relative folder structure `greppo serve /demo/folder/app.py` .
+
+:::
 
 Greppo’s GitHub repository: [https://github.com/greppo-io/greppo](https://github.com/greppo-io/greppo)
 
@@ -59,7 +67,11 @@ To be able to use Google Earth Engine, you need to create a service account and 
 
 <GitHubGist id="b75ef65c43ea13eacac41fe660c54b80" />
 
-> Note: Make sure to keep the key-file.json in another location, preferably safely in the root folder of your computer and not commit it into a public repository.
+:::note
+
+Make sure to keep the key-file.json in another location, preferably safely in the root folder of your computer and not commit it into a public repository.
+
+:::
 
 ## Understanding GEE’s client-server model
 
@@ -119,7 +131,11 @@ Next, let’s start with selecting the dataset from the catalog. Here, we are us
 
 To add a palette we create a visualisation parameter object containing the instruction for producing an RGM or greyscale image. Here we use a palette containing the `Hex values:[‘006633’, ‘E5FFCC’, ‘662A00’, ‘D8D8D8’, ‘F5F5F5’]` and map it linearly to the values corresponding to the `min -> #006633`and `max -> #F5F5F5`specified.
 
-> Note: The data stored in the DEM is a raster, represented as a matrix and each cell contains the elevation in meters of the point representing the cell.
+:::note
+
+The data stored in the DEM is a raster, represented as a matrix and each cell contains the elevation in meters of the point representing the cell.
+
+:::
 
 To then visualise this map in the web-application using Greppo, all you need to use is `app.ee_layer()`. The `ee_object` is the earth engine image object, `vis_param` is the visualisation parameter dictionary, `name` corresponds to the unique identifier which will be used in the web-app frontend, and a `description` is optional to provide additional direction to the app user. More on this can be found in the documentation [**_here_**](https://docs.greppo.io/map-components/ee-layer.html).
 
@@ -152,7 +168,11 @@ Using the latitude and longitude of the point, we can now create an earth engine
 
 To find the elevation of the point, we make use of the earth engine method `sample` on the DEM object. We sample the point in the DEM to get the properties from the DEM. We take the first point from the output and use the `.get` method to find the value associated with the property `elevation`. And, finally we compose a multiline string to display the output.
 
-> Note: To center the map to a point and at a zoom level on the initial load, make use of `app.map(center=[lat, lon], zoom=level)` .
+:::note
+
+To center the map to a point and at a zoom level on the initial load, make use of `app.map(center=[lat, lon], zoom=level)` .
+
+:::
 
 <figure>
 

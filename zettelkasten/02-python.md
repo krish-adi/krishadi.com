@@ -1,13 +1,13 @@
 ---
-title: Python environments
+slug: python
+title: Python Environments
 description: A quickstart to using and managing Python environments
-date: 2021-11-24
-modified: 2022-01-26
-category: zettelkasten
-layout: post
+published: 11/24/2021
+last_update:
+    date: 1/26/2022
 ---
 
-# Python environments
+# Python Environments
 
 Python has a nice progressive learning curve. It can be used in many ways, for many things. From quickly opening a dataset, and visualising it to writing heavy processing algorithms to running web-applications. Python could be your weapon of choice.
 
@@ -15,9 +15,11 @@ A downside about Python is managing dependencies and conflicts between package v
 
 So, here is my cheatsheet for managing Python environments. Most of the time I forget some of these commands and I need to scavenge the web for a particular command. So, I decided to put together a knowledge base here for my own reference.
 
-> Warning: these commands are used and were tested on a mac.
+:::caution
 
-# Python
+These commands were tested on a mac.
+
+:::
 
 ## venv
 

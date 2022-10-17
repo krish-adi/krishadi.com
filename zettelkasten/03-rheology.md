@@ -1,10 +1,10 @@
 ---
+slug: rheology
 title: Rheology
 description: Rheological characterisation of fluids
-date: 2022-01-26
-modified: 2022-02-21
-category: zettelkasten
-layout: post
+published: 1/26/2022
+last_update:
+    date: 2/21/2022
 ---
 
 # Rheology

@@ -1,13 +1,13 @@
 ---
+slug: deep-learning
 title: Deep Learning
 description: Deep-learning quick reference cheat sheet
-date: 2022-04-21
-modified: 2022-04-26
-category: zettelkasten
-layout: post
+published: 4/21/2022
+last_update:
+    date: 4/26/2022
 ---
 
-# Deep learning
+# Deep Learning
 
 ## Single neuron
 
@@ -31,7 +31,7 @@ The formula for this neuron would be 𝑦=𝑤0𝑥0+𝑤1𝑥1+𝑤2𝑥2+𝑏
 
 ## [Linear Units in Keras](https://www.kaggle.com/code/ryanholbrook/a-single-neuron#Linear-Units-in-Keras)
 
-Create a model in Keras through `keras.Sequential`, which creates a neural network as a stack of _layers_.
+Create a model in Keras through `keras.Sequential`, which creates a neural network as a stack of *layers*.
 
 ```python
 from tensorflow import keras
@@ -55,21 +55,21 @@ Neural networks typically organize their neurons into **layers**. When we colle
 
 A dense layer of two linear units receiving two inputs and a bias.
 
-Each layer in a neural network performs some kind of relatively simple transformation. Through a deep stack of layers, a neural network can transform its inputs in more and more complex ways. In a well-trained neural network, each layer is a transformation getting us a little bit closer to a solution. A layer can be, essentially, any kind of _data transformation_. Many layers, like the [convolutional](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D) and [recurrent](https://www.tensorflow.org/api_docs/python/tf/keras/layers/RNN) layers, transform data through use of neurons and differ primarily in the pattern of connections they form. Others though are used for [feature engineering](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding) or just [simple arithmetic](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Add). [The other layers to explore](https://www.tensorflow.org/api_docs/python/tf/keras/layers)!
+Each layer in a neural network performs some kind of relatively simple transformation. Through a deep stack of layers, a neural network can transform its inputs in more and more complex ways. In a well-trained neural network, each layer is a transformation getting us a little bit closer to a solution. A layer can be, essentially, any kind of *data transformation*. Many layers, like the [convolutional](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D) and [recurrent](https://www.tensorflow.org/api_docs/python/tf/keras/layers/RNN) layers, transform data through use of neurons and differ primarily in the pattern of connections they form. Others though are used for [feature engineering](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding) or just [simple arithmetic](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Add). [The other layers to explore](https://www.tensorflow.org/api_docs/python/tf/keras/layers)!
 
 [**Activation Function**](https://www.kaggle.com/code/ryanholbrook/deep-neural-networks#The-Activation-Function)
 
-It turns out, however, that two dense layers with nothing in between are no better than a single dense layer by itself. Dense layers by themselves can never move us out of the world of lines and planes. What we need is something _nonlinear_. What we need are activation functions.
+It turns out, however, that two dense layers with nothing in between are no better than a single dense layer by itself. Dense layers by themselves can never move us out of the world of lines and planes. What we need is something *nonlinear*. What we need are activation functions.
 
 ![](https://i.imgur.com/OLSUEYT.png)
 
 Without activation functions, neural networks can only learn linear relationships. In order to fit curves, we'll need to use activation functions.
 
-An **activation function** is simply some function we apply to each of a layer's outputs (its _activations_). The most common is the _rectifier_ function 𝑚𝑎𝑥(0,𝑥)max(0,x).
+An **activation function** is simply some function we apply to each of a layer's outputs (its *activations*). The most common is the *rectifier* function 𝑚𝑎𝑥(0,𝑥)max(0,x).
 
 ![A graph of the rectifier function. The line y=x when x>0 and y=0 when x<0, making a 'hinge' shape like '_/'.](https://i.imgur.com/aeIyAlF.png)
 
-The rectifier function has a graph that's a line with the negative part "rectified" to zero. Applying the function to the outputs of a neuron will put a _bend_ in the data, moving us away from simple lines.
+The rectifier function has a graph that's a line with the negative part "rectified" to zero. Applying the function to the outputs of a neuron will put a *bend* in the data, moving us away from simple lines.
 
 When we attach the rectifier to a linear unit, we get a **rectified linear unit** or **ReLU**. (For this reason, it's common to call the rectifier function the "ReLU function".) Applying a ReLU activation to a linear unit means the output becomes `max(0, w * x + b)`, which we might draw in a diagram like:
 
@@ -102,7 +102,7 @@ model = keras.Sequential([
     # the hidden ReLU layers
     layers.Dense(units=4, activation='relu', input_shape=[2]),
     layers.Dense(units=3, activation='relu'),
-    # the linear output layer 
+    # the linear output layer
     layers.Dense(units=1),
 ])
 ```
@@ -116,7 +116,7 @@ We need two more things:
 
 [**The Loss Function**](https://www.kaggle.com/code/ryanholbrook/stochastic-gradient-descent#The-Loss-Function)
 
-Tell a network _what_ problem to solve. This is the job of the loss function. The **loss function** measures the disparity between the the target's true value and the value the model predicts.
+Tell a network *what* problem to solve. This is the job of the loss function. The **loss function** measures the disparity between the the target's true value and the value the model predicts.
 
 A common loss function for regression problems is the **mean absolute error** or **MAE**. For each prediction `y_pred`, MAE measures the disparity from the true target `y_true` by an absolute difference `abs(y_true - y_pred)`.
 
@@ -130,7 +130,7 @@ During training, the model will use the loss function as a guide for finding the
 
 [**The Optimizer - Stochastic Gradient Descent**](https://www.kaggle.com/code/ryanholbrook/stochastic-gradient-descent#The-Optimizer---Stochastic-Gradient-Descent)
 
-_how_ to solve it. This is the job of the **optimizer**. The optimizer is an algorithm that adjusts the weights to minimize the loss. Virtually all of the optimization algorithms used in deep learning belong to a family called **stochastic gradient descent**. They are iterative algorithms that train a network in steps. One **step** of training goes like this:
+*how* to solve it. This is the job of the **optimizer**. The optimizer is an algorithm that adjusts the weights to minimize the loss. Virtually all of the optimization algorithms used in deep learning belong to a family called **stochastic gradient descent**. They are iterative algorithms that train a network in steps. One **step** of training goes like this:
 
 1.  Sample some training data and run it through the network to make predictions.
 2.  Measure the loss between the predictions and the true values.
@@ -191,87 +191,12 @@ y_train = df_train['quality']
 y_valid = df_valid['quality']
 ```
 
-<!-- <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>fixed acidity</th>
-      <th>volatile acidity</th>
-      <th>citric acid</th>
-      <th>residual sugar</th>
-      <th>chlorides</th>
-      <th>free sulfur dioxide</th>
-      <th>total sulfur dioxide</th>
-      <th>density</th>
-      <th>pH</th>
-      <th>sulphates</th>
-      <th>alcohol</th>
-      <th>quality</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1109</th>
-      <td>10.8</td>
-      <td>0.470</td>
-      <td>0.43</td>
-      <td>2.10</td>
-      <td>0.171</td>
-      <td>27.0</td>
-      <td>66.0</td>
-      <td>0.99820</td>
-      <td>3.17</td>
-      <td>0.76</td>
-      <td>10.8</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>1032</th>
-      <td>8.1</td>
-      <td>0.820</td>
-      <td>0.00</td>
-      <td>4.10</td>
-      <td>0.095</td>
-      <td>5.0</td>
-      <td>14.0</td>
-      <td>0.99854</td>
-      <td>3.36</td>
-      <td>0.53</td>
-      <td>9.6</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>1002</th>
-      <td>9.1</td>
-      <td>0.290</td>
-      <td>0.33</td>
-      <td>2.05</td>
-      <td>0.063</td>
-      <td>13.0</td>
-      <td>27.0</td>
-      <td>0.99516</td>
-      <td>3.26</td>
-      <td>0.84</td>
-      <td>11.7</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>487</th>
-      <td>10.2</td>
-      <td>0.645</td>
-      <td>0.36</td>
-      <td>1.80</td>
-      <td>0.053</td>
-      <td>5.0</td>
-      <td>14.0</td>
-      <td>0.99820</td>
-      <td>3.17</td>
-      <td>0.42</td>
-      <td>10.0</td>
-      <td>6</td>
-    </tr>
-  </tbody>
-</table> -->
+| fixed acidity | volatile acidity | citric acid | residual sugar | chlorides | free sulfur dioxide | total sulfur dioxide | density | pH      | sulphates | alcohol | quality |
+| ------------- | ---------------- | ----------- | -------------- | --------- | ------------------- | -------------------- | ------- | ------- | --------- | ------- | ------- | --- |
+| 1109          | 10.8             | 0.470       | 0.43           | 2.10      | 0.171               | 27.0                 | 66.0    | 0.99820 | 3.17      | 0.76    | 10.8    | 6   |
+| 1032          | 8.1              | 0.820       | 0.00           | 4.10      | 0.095               | 5.0                  | 14.0    | 0.99854 | 3.36      | 0.53    | 9.6     | 5   |
+| 1002          | 9.1              | 0.290       | 0.33           | 2.05      | 0.063               | 13.0                 | 27.0    | 0.99516 | 3.26      | 0.84    | 11.7    | 7   |
+| 487           | 10.2             | 0.645       | 0.36           | 1.80      | 0.053               | 5.0                  | 14.0    | 0.99820 | 3.17      | 0.42    | 10.0    | 6   |
 
 ```python
 from tensorflow import keras
@@ -318,9 +243,9 @@ history_df['loss'].plot();
 
 [**Interpreting the Learning Curves**](https://www.kaggle.com/code/ryanholbrook/overfitting-and-underfitting#Interpreting-the-Learning-Curves)
 
-You might think about the information in the training data as being of two kinds: _signal_ and _noise_. The signal is the part that generalizes, the part that can help our model make predictions from new data. The noise is that part that is _only_ true of the training data; the noise is all of the random fluctuation that comes from data in the real-world or all of the incidental, non-informative patterns that can't actually help the model make predictions. The noise is the part might look useful but really isn't.
+You might think about the information in the training data as being of two kinds: *signal* and *noise*. The signal is the part that generalizes, the part that can help our model make predictions from new data. The noise is that part that is *only* true of the training data; the noise is all of the random fluctuation that comes from data in the real-world or all of the incidental, non-informative patterns that can't actually help the model make predictions. The noise is the part might look useful but really isn't.
 
-We train a model by choosing weights or parameters that minimize the loss on a training set. You might know, however, that to accurately assess a model's performance, we need to evaluate it on a new set of data, the _validation_ data. (You could see our lesson on [model validation](https://www.kaggle.com/dansbecker/model-validation) in _Introduction to Machine Learning_ for a review.)
+We train a model by choosing weights or parameters that minimize the loss on a training set. You might know, however, that to accurately assess a model's performance, we need to evaluate it on a new set of data, the *validation* data. (You could see our lesson on [model validation](https://www.kaggle.com/dansbecker/model-validation) in *Introduction to Machine Learning* for a review.)
 
 When we train a model we've been plotting the loss on the training set epoch by epoch. To this we'll add a plot the validation data too. These plots we call the **learning curves**. To train deep learning models effectively, we need to be able to interpret them.
 
@@ -328,7 +253,7 @@ When we train a model we've been plotting the loss on the training set epoch by 
 
 The validation loss gives an estimate of the expected error on unseen data.
 
-Now, the training loss will go down either when the model learns signal or when it learns noise. But the validation loss will go down only when the model learns signal. (Whatever noise the model learned from the training set won't generalize to new data.) So, when a model learns signal both curves go down, but when it learns noise a _gap_ is created in the curves. The size of the gap tells you how much noise the model has learned.
+Now, the training loss will go down either when the model learns signal or when it learns noise. But the validation loss will go down only when the model learns signal. (Whatever noise the model learned from the training set won't generalize to new data.) So, when a model learns signal both curves go down, but when it learns noise a *gap* is created in the curves. The size of the gap tells you how much noise the model has learned.
 
 Ideally, we would create models that learn all of the signal and none of the noise. This will practically never happen. Instead we make a trade. We can get the model to learn more signal at the cost of learning more noise. So long as the trade is in our favor, the validation loss will continue to decrease. After a certain point, however, the trade can turn against us, the cost exceeds the benefit, and the validation loss begins to rise.
 
@@ -336,7 +261,7 @@ Ideally, we would create models that learn all of the signal and none of the noi
 
 Underfitting and overfitting.
 
-This trade-off indicates that there can be two problems that occur when training a model: not enough signal or too much noise. **Underfitting** the training set is when the loss is not as low as it could be because the model hasn't learned enough _signal_. **Overfitting** the training set is when the loss is not as low as it could be because the model learned too much _noise_. The trick to training deep learning models is finding the best balance between the two.
+This trade-off indicates that there can be two problems that occur when training a model: not enough signal or too much noise. **Underfitting** the training set is when the loss is not as low as it could be because the model hasn't learned enough *signal*. **Overfitting** the training set is when the loss is not as low as it could be because the model learned too much *noise*. The trick to training deep learning models is finding the best balance between the two.
 
 We'll look at a couple ways of getting more signal out of the training data while reducing the amount of noise.
 
@@ -344,7 +269,7 @@ We'll look at a couple ways of getting more signal out of the training data whil
 
 A model's **capacity** refers to the size and complexity of the patterns it is able to learn. For neural networks, this will largely be determined by how many neurons it has and how they are connected together. If it appears that your network is underfitting the data, you should try increasing its capacity.
 
-You can increase the capacity of a network either by making it _wider_ (more units to existing layers) or by making it _deeper_ (adding more layers). Wider networks have an easier time learning more linear relationships, while deeper networks prefer more nonlinear ones. Which is better just depends on the dataset.
+You can increase the capacity of a network either by making it *wider* (more units to existing layers) or by making it *deeper* (adding more layers). Wider networks have an easier time learning more linear relationships, while deeper networks prefer more nonlinear ones. Which is better just depends on the dataset.
 
 ```
 model = keras.Sequential([
@@ -374,7 +299,7 @@ We keep the model where the validation loss is at a minimum.
 
 Once we detect that the validation loss is starting to rise again, we can reset the weights back to where the minimum occured. This ensures that the model won't continue to learn noise and overfit the data.
 
-Training with early stopping also means we're in less danger of stopping the training too early, before the network has finished learning signal. So besides preventing overfitting from training too long, early stopping can also prevent _underfitting_ from not training long enough. Just set your training epochs to some large number (more than you'll need), and early stopping will take care of the rest.
+Training with early stopping also means we're in less danger of stopping the training too early, before the network has finished learning signal. So besides preventing overfitting from training too long, early stopping can also prevent *underfitting* from not training long enough. Just set your training epochs to some large number (more than you'll need), and early stopping will take care of the rest.
 
 [**Adding Early Stopping**](https://www.kaggle.com/code/ryanholbrook/overfitting-and-underfitting#Adding-Early-Stopping)
 
@@ -443,13 +368,13 @@ The first of these is the "dropout layer", which can help correct overfitting.
 
 Overfitting is caused by the network learning spurious patterns in the training data. To recognize these spurious patterns a network will often rely on very a specific combinations of weight, a kind of "conspiracy" of weights. Being so specific, they tend to be fragile: remove one and the conspiracy falls apart.
 
-This is the idea behind **dropout**. To break up these conspiracies, we randomly _drop out_ some fraction of a layer's input units every step of training, making it much harder for the network to learn those spurious patterns in the training data. Instead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.
+This is the idea behind **dropout**. To break up these conspiracies, we randomly *drop out* some fraction of a layer's input units every step of training, making it much harder for the network to learn those spurious patterns in the training data. Instead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.
 
 ![An animation of a network cycling through various random dropout configurations.](https://i.imgur.com/a86utxY.gif)
 
 Here, 50% dropout has been added between the two hidden layers.
 
-You could also think about dropout as creating a kind of _ensemble_ of networks. The predictions will no longer be made by one big network, but instead by a committee of smaller networks. Individuals in the committee tend to make different kinds of mistakes, but be right at the same time, making the committee as a whole better than any individual. (If you're familiar with random forests as an ensemble of decision trees, it's the same idea.)
+You could also think about dropout as creating a kind of *ensemble* of networks. The predictions will no longer be made by one big network, but instead by a committee of smaller networks. Individuals in the committee tend to make different kinds of mistakes, but be right at the same time, making the committee as a whole better than any individual. (If you're familiar with random forests as an ensemble of decision trees, it's the same idea.)
 
 [_Adding Dropout_](https://www.kaggle.com/code/ryanholbrook/dropout-and-batch-normalization#Adding-Dropout)
 
@@ -495,7 +420,7 @@ And if you add it as the first layer of your network it can act as a kind of ada
 
 ## [Example - Using Dropout and Batch Normalization](https://www.kaggle.com/code/ryanholbrook/dropout-and-batch-normalization#Example---Using-Dropout-and-Batch-Normalization)
 
-Let's continue developing the _Red Wine_ model. Now we'll increase the capacity even more, but add dropout to control overfitting and batch normalization to speed up optimization. This time, we'll also leave off standardizing the data, to demonstrate how batch normalization can stabalize the training.
+Let's continue developing the *Red Wine* model. Now we'll increase the capacity even more, but add dropout to control overfitting and batch normalization to speed up optimization. This time, we'll also leave off standardizing the data, to demonstrate how batch normalization can stabalize the training.
 
 When adding dropout, you may need to increase the number of units in your `Dense` layers.
 
@@ -549,11 +474,11 @@ In your raw data, the classes might be represented by strings like `"Yes"` and
 
 **Accuracy** is one of the many metrics in use for measuring success on a classification problem. Accuracy is the ratio of correct predictions to total predictions: `accuracy = number_correct / total`. A model that always predicted correctly would have an accuracy score of `1.0`. All else being equal, accuracy is a reasonable metric to use whenever the classes in the dataset occur with about the same frequency.
 
-The problem with accuracy (and most other classification metrics) is that it can't be used as a loss function. SGD needs a loss function that changes smoothly, but accuracy, being a ratio of counts, changes in "jumps". So, we have to choose a substitute to act as the loss function. This substitute is the _cross-entropy_ function.
+The problem with accuracy (and most other classification metrics) is that it can't be used as a loss function. SGD needs a loss function that changes smoothly, but accuracy, being a ratio of counts, changes in "jumps". So, we have to choose a substitute to act as the loss function. This substitute is the *cross-entropy* function.
 
-Now, recall that the loss function defines the _objective_ of the network during training. With regression, our goal was to minimize the distance between the expected outcome and the predicted outcome. We chose MAE to measure this distance.
+Now, recall that the loss function defines the *objective* of the network during training. With regression, our goal was to minimize the distance between the expected outcome and the predicted outcome. We chose MAE to measure this distance.
 
-For classification, what we want instead is a distance between _probabilities_, and this is what cross-entropy provides. **Cross-entropy** is a sort of measure for the distance from one probability distribution to another.
+For classification, what we want instead is a distance between *probabilities*, and this is what cross-entropy provides. **Cross-entropy** is a sort of measure for the distance from one probability distribution to another.
 
 ![Graphs of accuracy and cross-entropy.](https://i.imgur.com/DwVV9bR.png)
 
@@ -571,7 +496,7 @@ The cross-entropy and accuracy functions both require probabilities as inputs, m
 
 The sigmoid function maps real numbers into the interval [0,1][0,1].
 
-To get the final class prediction, we define a _threshold_ probability. Typically this will be 0.5, so that rounding will give us the correct class: below 0.5 means the class with label 0 and 0.5 or above means the class with label 1. A 0.5 threshold is what Keras uses by default with its [accuracy metric](https://www.tensorflow.org/api_docs/python/tf/keras/metrics/BinaryAccuracy).
+To get the final class prediction, we define a *threshold* probability. Typically this will be 0.5, so that rounding will give us the correct class: below 0.5 means the class with label 0 and 0.5 or above means the class with label 1. A 0.5 threshold is what Keras uses by default with its [accuracy metric](https://www.tensorflow.org/api_docs/python/tf/keras/metrics/BinaryAccuracy).
 
 ## [Example - Binary Classification](https://www.kaggle.com/code/ryanholbrook/binary-classification#Example---Binary-Classification)
 
@@ -604,156 +529,13 @@ y_train = df_train['Class']
 y_valid = df_valid['Class']
 ```
 
-<!-- <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>V1</th>
-      <th>V2</th>
-      <th>V3</th>
-      <th>V4</th>
-      <th>V5</th>
-      <th>V6</th>
-      <th>V7</th>
-      <th>V8</th>
-      <th>V9</th>
-      <th>V10</th>
-      <th>...</th>
-      <th>V26</th>
-      <th>V27</th>
-      <th>V28</th>
-      <th>V29</th>
-      <th>V30</th>
-      <th>V31</th>
-      <th>V32</th>
-      <th>V33</th>
-      <th>V34</th>
-      <th>Class</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0.99539</td>
-      <td>-0.05889</td>
-      <td>0.85243</td>
-      <td>0.02306</td>
-      <td>0.83398</td>
-      <td>-0.37708</td>
-      <td>1.00000</td>
-      <td>0.03760</td>
-      <td>...</td>
-      <td>-0.51171</td>
-      <td>0.41078</td>
-      <td>-0.46168</td>
-      <td>0.21266</td>
-      <td>-0.34090</td>
-      <td>0.42267</td>
-      <td>-0.54487</td>
-      <td>0.18641</td>
-      <td>-0.45300</td>
-      <td>good</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>0</td>
-      <td>1.00000</td>
-      <td>-0.18829</td>
-      <td>0.93035</td>
-      <td>-0.36156</td>
-      <td>-0.10868</td>
-      <td>-0.93597</td>
-      <td>1.00000</td>
-      <td>-0.04549</td>
-      <td>...</td>
-      <td>-0.26569</td>
-      <td>-0.20468</td>
-      <td>-0.18401</td>
-      <td>-0.19040</td>
-      <td>-0.11593</td>
-      <td>-0.16626</td>
-      <td>-0.06288</td>
-      <td>-0.13738</td>
-      <td>-0.02447</td>
-      <td>bad</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>0</td>
-      <td>1.00000</td>
-      <td>-0.03365</td>
-      <td>1.00000</td>
-      <td>0.00485</td>
-      <td>1.00000</td>
-      <td>-0.12062</td>
-      <td>0.88965</td>
-      <td>0.01198</td>
-      <td>...</td>
-      <td>-0.40220</td>
-      <td>0.58984</td>
-      <td>-0.22145</td>
-      <td>0.43100</td>
-      <td>-0.17365</td>
-      <td>0.60436</td>
-      <td>-0.24180</td>
-      <td>0.56045</td>
-      <td>-0.38238</td>
-      <td>good</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>0</td>
-      <td>1.00000</td>
-      <td>-0.45161</td>
-      <td>1.00000</td>
-      <td>1.00000</td>
-      <td>0.71216</td>
-      <td>-1.00000</td>
-      <td>0.00000</td>
-      <td>0.00000</td>
-      <td>...</td>
-      <td>0.90695</td>
-      <td>0.51613</td>
-      <td>1.00000</td>
-      <td>1.00000</td>
-      <td>-0.20099</td>
-      <td>0.25682</td>
-      <td>1.00000</td>
-      <td>-0.32382</td>
-      <td>1.00000</td>
-      <td>bad</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>1</td>
-      <td>0</td>
-      <td>1.00000</td>
-      <td>-0.02401</td>
-      <td>0.94140</td>
-      <td>0.06531</td>
-      <td>0.92106</td>
-      <td>-0.23255</td>
-      <td>0.77152</td>
-      <td>-0.16399</td>
-      <td>...</td>
-      <td>-0.65158</td>
-      <td>0.13290</td>
-      <td>-0.53206</td>
-      <td>0.02431</td>
-      <td>-0.62197</td>
-      <td>-0.05707</td>
-      <td>-0.59573</td>
-      <td>-0.04608</td>
-      <td>-0.65697</td>
-      <td>good</td>
-    </tr>
-  </tbody>
-</table> -->
+|  | V1  | V2  | V3  | V4      | V5       | V6      | V7       | V8       | V9       | V10     | ...      | V26 | V27      | V28      | V29      | V30      | V31      | V32      | V33      | V34      | Class    |
+| --- | --- | --- | ------- | -------- | ------- | -------- | -------- | -------- | ------- | -------- | --- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | ---- |
+| 1   | 1   | 0   | 0.99539 | -0.05889 | 0.85243 | 0.02306  | 0.83398  | -0.37708 | 1.00000 | 0.03760  | ... | -0.51171 | 0.41078  | -0.46168 | 0.21266  | -0.34090 | 0.42267  | -0.54487 | 0.18641  | -0.45300 | good |
+| 2   | 1   | 0   | 1.00000 | -0.18829 | 0.93035 | -0.36156 | -0.10868 | -0.93597 | 1.00000 | -0.04549 | ... | -0.26569 | -0.20468 | -0.18401 | -0.19040 | -0.11593 | -0.16626 | -0.06288 | -0.13738 | -0.02447 | bad  |
+| 3   | 1   | 0   | 1.00000 | -0.03365 | 1.00000 | 0.00485  | 1.00000  | -0.12062 | 0.88965 | 0.01198  | ... | -0.40220 | 0.58984  | -0.22145 | 0.43100  | -0.17365 | 0.60436  | -0.24180 | 0.56045  | -0.38238 | good |
+| 4   | 1   | 0   | 1.00000 | -0.45161 | 1.00000 | 1.00000  | 0.71216  | -1.00000 | 0.00000 | 0.00000  | ... | 0.90695  | 0.51613  | 1.00000  | 1.00000  | -0.20099 | 0.25682  | 1.00000  | -0.32382 | 1.00000  | bad  |
+| 5   | 1   | 0   | 1.00000 | -0.02401 | 0.94140 | 0.06531  | 0.92106  | -0.23255 | 0.77152 | -0.16399 | ... | -0.65158 | 0.13290  | -0.53206 | 0.02431  | -0.62197 | -0.05707 | -0.59573 | -0.04608 | -0.65697 | good |
 
 ```python
 from tensorflow import keras
@@ -761,7 +543,7 @@ from tensorflow.keras import layers
 
 model = keras.Sequential([
     layers.Dense(4, activation='relu', input_shape=[33]),
-    layers.Dense(4, activation='relu'),    
+    layers.Dense(4, activation='relu'),
     layers.Dense(1, activation='sigmoid'),
 ])
 ```
@@ -791,7 +573,7 @@ history = model.fit(
 )
 ```
 
-```python
+````python
 
 history_df = pd.DataFrame(history.history)
 # Start the plot at epoch 5
@@ -800,7 +582,7 @@ history_df.loc[5:, ['binary_accuracy', 'val_binary_accuracy']].plot()
 
 print(("Best Validation Loss: {:0.4f}" +\
       "\nBest Validation Accuracy: {:0.4f}")\
-      .format(history_df['val_loss'].min(), 
+      .format(history_df['val_loss'].min(),
               history_df['val_binary_accuracy'].max()))
               ```
 
@@ -818,3 +600,4 @@ Best Validation Accuracy: 0.7619
 - Keras and Tensorflow documentation
 - [Kaggle](https://www.kaggle.com/)
 - http://introtodeeplearning.com/ - MIT Deep-Learning course
+````

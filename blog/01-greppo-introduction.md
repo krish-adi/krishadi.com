@@ -12,7 +12,7 @@ import GitHubGist from "../components/GitHubGist";
 
 # Build a geospatial dashboard in Python using Greppo
 
-February 24, 2022
+_February 24, 2022_
 
 > **Lack of frontend, backend and web-dev experience can be limiting in making a web-app in Python. Not anymore…**
 
@@ -73,7 +73,13 @@ Let’s create the Python script for the dashboard. The code for the app goes in
 
 **Step 0: Serving the app**
 
-To run and serve the app, open a terminal and follow these instructions. First, change directory (`cd`) into the project folder `vector_demo`. Once inside, activate your Python environment where you have `greppo` installed. I am using pyenv here in the example. To then run the app, all you need to do is run `greppo serve app.py` command. The command `serve`, starts the server and compiles the code inside the `app.py`, which can be renamed to any file. Note: Be sure to be inside the project folder where the app.py is, or use a relative folder structure such as `greppo serve ./vector-demo/app.py`.
+To run and serve the app, open a terminal and follow these instructions. First, change directory (`cd`) into the project folder `vector_demo`. Once inside, activate your Python environment where you have `greppo` installed. I am using pyenv here in the example. To then run the app, all you need to do is run `greppo serve app.py` command. The command `serve`, starts the server and compiles the code inside the `app.py`, which can be renamed to any file.
+
+:::note
+
+Be sure to be inside the project folder where the app.py is, or use a relative folder structure such as `greppo serve ./vector-demo/app.py`.
+
+:::
 
 <figure>
 
@@ -103,7 +109,13 @@ Figure: Result from Step 1. Using the controls marked in red to toggle. Image by
 </figcaption>
 </figure>
 
-To add a `base_layer` to your application map, just use the app API method `app.base_layer()` with the required arguments. Refer to the [documentation](https://docs.greppo.io/) for what is required and what is optional. The `base_layer` method provides two ways to specify the base tile layer. One is to use the `name` and `url` attributes. The other method is to use the name of a `provider`. Greppo uses [xyzservices](https://xyzservices.readthedocs.io/en/stable/) under the hood for this. For a list of the provider names, check out this list [here](https://xyzservices.readthedocs.io/en/stable/introduction.html). Note: The prover name should be complete with its type/variety as in `CartoDB Positron` or `OpenStreetMap Mapnik` .
+To add a `base_layer` to your application map, just use the app API method `app.base_layer()` with the required arguments. Refer to the [documentation](https://docs.greppo.io/) for what is required and what is optional. The `base_layer` method provides two ways to specify the base tile layer. One is to use the `name` and `url` attributes. The other method is to use the name of a `provider`. Greppo uses [xyzservices](https://xyzservices.readthedocs.io/en/stable/) under the hood for this. For a list of the provider names, check out this list [here](https://xyzservices.readthedocs.io/en/stable/introduction.html).
+
+:::note
+
+The provider name should be complete with its type/variety as in `CartoDB Positron` or `OpenStreetMap Mapnik` .
+
+:::
 
 **Step 2: Import the dataset and display it as an overlay.**
 
@@ -124,7 +136,13 @@ Result from Step 2. Using the controls marked in red to toggle.
 </figcaption>
 </figure>
 
-You can find all the information of the vector_layer and the styling [here](https://docs.greppo.io/map-components/vector-layer.html). Note: You could also make a Choropleth map. Documentation of which can be found [here](https://docs.greppo.io/map-components/vector-layer.html#choropleth).
+You can find all the information of the vector_layer and the styling [here](https://docs.greppo.io/map-components/vector-layer.html).
+
+:::note
+
+You could also make a Choropleth map. Documentation of which can be found [here](https://docs.greppo.io/map-components/vector-layer.html#choropleth).
+
+:::
 
 **Step 3: Displaying in-app text, app-title and app-description**
 
