@@ -1,0 +1,28 @@
+.homepageHeader {
+    padding: 2rem 16rem;
+    /* margin: 0rem 4rem; */
+}
+
+.homepageLink {
+    color: var(--ifm-font-color-base);
+    border-bottom: 3px solid var(--yellow);
+    padding: 0px 2px;
+    text-decoration: none;
+}
+
+.homepageLink:hover {
+    background-color: var(--yellow);
+    color: #000000;
+    text-decoration: none;
+}
+
+.category {
+    font-weight: 400;
+    margin: 30px 0;
+}
+
+@media screen and (max-width: 996px) {
+    .homepageHeader {
+        padding: 2rem;
+    }
+}

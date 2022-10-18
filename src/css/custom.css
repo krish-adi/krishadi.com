@@ -62,7 +62,7 @@
 
     --sans: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Helvetica Neue,
         sans-serif;
-    --serif: Tiempos, serif;
+    --serif: IBM Plex Serif, Tiempos, serif;
     --mono: GT America Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
         monospace;
 }
