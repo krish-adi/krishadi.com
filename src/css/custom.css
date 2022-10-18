@@ -266,3 +266,13 @@ nav.pagination-nav > a.pagination-nav__link > div.pagination-nav__label {
     margin-top: 1rem;
     margin-bottom: 0.4rem;
 }
+
+.footerIcon {
+    fill: var(--ifm-color-content);
+    width: 16px;
+    height: 16px;
+}
+
+.footerIcon:hover {
+    fill: var(--ifm-color-content-secondary);
+}
