@@ -8,6 +8,9 @@ export default function HomepageHeader() {
         <header className={clsx("container")}>
             <div className={clsx(" ", styles.homepageHeader)}>
                 <h2 className={clsx(" ", styles.category)}>
+                    Hi! I'm Adithya. 👋
+                </h2>
+                <h2 className={clsx(" ", styles.category)}>
                     Engineer, Scientist, Developer, Climber
                 </h2>
 
