@@ -1,4 +1,4 @@
-I could only imagine a few reasons why you are here, to hire me or invest in me. Head over [here](me.md), if you are interested in a story-like narration about me. However, if you are interested in a CV, here it is.
+I could only imagine a few reasons why you are here, to hire me or invest in me. Head over [here](/me), if you are interested in a story-like narration about me. However, if you are interested in a CV, here it is.
 
 I am Adithya Krishnan.
 
