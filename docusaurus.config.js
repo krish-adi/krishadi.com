@@ -45,6 +45,9 @@ const config = {
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
                 },
+                gtag: {
+                    trackingID: "G-62QSD7Z9M4",
+                },
             }),
         ],
     ],
@@ -66,8 +69,19 @@ const config = {
     themeConfig:
         /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
+            metadata: [
+                {
+                    name: "keywords",
+                    content:
+                        "snowflake, sql, machine, learning, python, data, warehouse",
+                },
+                {
+                    name: "description",
+                    content:
+                        "Blog · Zettelkasten · Projects · Bio · What I know, learned, practice... ",
+                },
+            ],
             navbar: {
-                // title: "Adithya Krishnan",
                 hideOnScroll: true,
                 logo: {
                     alt: "adithya krishnan",

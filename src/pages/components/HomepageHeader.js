@@ -25,6 +25,17 @@ export default function HomepageHeader() {
                     >
                         About me
                     </a>
+                    <a
+                        className={clsx(
+                            " ",
+                            styles.category,
+                            styles.homepageLink
+                        )}
+                        style={{ marginLeft: "2rem" }}
+                        href="/cv"
+                    >
+                        My CV
+                    </a>
                 </h3>
 
                 <div className={clsx(" ", styles.category)}>

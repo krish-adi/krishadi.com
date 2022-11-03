@@ -10,8 +10,8 @@
 
     background: linear-gradient(
         to bottom,
-        var(--purple) 0%,
-        var(--purple) 100%
+        var(--green) 0%,
+        var(--green) 100%
     );
     background-position: 0 100%;
     background-repeat: repeat-x;
