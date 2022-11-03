@@ -5,14 +5,27 @@
 
 .homepageLink {
     color: var(--ifm-font-color-base);
-    border-bottom: 3px solid var(--yellow);
-    padding: 0px 2px;
     text-decoration: none;
+    padding: 2px 2px;
+
+    background: linear-gradient(
+        to bottom,
+        var(--purple) 0%,
+        var(--purple) 100%
+    );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 2px;
+    transition: background-size 0.2s;
+
+    /* box-shadow: inset 0 -3px 0 -1px var(--yellow);
+    transition: box-shadow 0.15s ease-in-out;
+    padding-bottom: 2px; */
 }
 
 .homepageLink:hover {
-    background-color: var(--yellow);
-    color: #000000;
+    background-size: 4px 50px;
+    color: #ffffff;
     text-decoration: none;
 }
 
