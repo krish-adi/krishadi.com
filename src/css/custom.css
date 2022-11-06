@@ -220,6 +220,14 @@ div.navbar__items > div > button.clean-btn {
     margin: 5px 15px;
 }
 
+@media screen and (max-width: 996px) {
+    .navbar__brand {
+        flex-grow: 1;
+        place-content: center;
+        /* place-content: end;         */
+    }
+}
+
 aside.theme-doc-sidebar-container > div > nav.menu.thin-scrollbar {
     padding-right: 2rem;
 }
