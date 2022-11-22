@@ -8,11 +8,7 @@
     text-decoration: none;
     padding: 2px 2px;
 
-    background: linear-gradient(
-        to bottom,
-        var(--green) 0%,
-        var(--green) 100%
-    );
+    background: linear-gradient(to bottom, var(--blue) 0%, var(--blue) 100%);
     background-position: 0 100%;
     background-repeat: repeat-x;
     background-size: 4px 2px;
@@ -31,7 +27,13 @@
 
 .category {
     font-weight: 400;
+    font-family: var(--mono);
     margin: 30px 0;
+}
+
+.homepageLinkDescription {
+    margin-top: 10px;
+    font-size: 0.85rem;
 }
 
 @media (min-width: 426px) and (max-width: 996px) {
@@ -43,5 +45,44 @@
 @media screen and (max-width: 425px) {
     .homepageHeader {
         padding: 0.5rem;
+    }
+}
+
+.homepageHero {
+    display: flex;
+    justify-content: center;
+}
+
+.lifemap {
+    height: auto;
+    min-width: 300px;
+    max-width: 450px;
+    margin: 0px 5px;
+}
+
+.lifemapcv {
+    height: auto;
+    min-width: 185px;
+    max-width: 250px;
+    margin: 0px 5px;
+}
+
+@media screen and (max-width: 550px) {
+    .homepageHero {
+        flex-direction: column;
+        
+    }
+
+    .lifemap {
+        height: auto;
+        max-width: 400px;
+        margin: 10px auto;
+        padding-right: 15px;
+    }
+
+    .lifemapcv {
+        height: auto;
+        max-width: 250px;
+        margin: 10px auto;
     }
 }

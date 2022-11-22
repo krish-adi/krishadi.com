@@ -1,0 +1,21 @@
+import React from "react";
+import clsx from "clsx";
+
+import styles from "./HomepageStyles.module.css";
+
+import LifeMap from "../../../static/assets/life-map.svg";
+import LifeMapCV from "../../../static/assets/life-map-cv.svg";
+
+export default function HomepageHero() {
+    return (
+        <div className={clsx("container")}>
+            <div className={clsx(" ", styles.homepageHero)}>
+                <LifeMap className={styles.lifemap} />
+                <LifeMapCV className={styles.lifemapcv} />
+            </div>
+            <p style={{ display: "none" }}>
+                This life map has been inspired from https://thiagot.com/
+            </p>
+        </div>
+    );
+}
