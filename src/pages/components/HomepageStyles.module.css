@@ -75,6 +75,7 @@
 
     .lifemap {
         height: auto;
+        width: 100%;
         max-width: 400px;
         margin: 10px auto;
         padding-right: 15px;
@@ -82,7 +83,7 @@
 
     .lifemapcv {
         height: auto;
-        max-width: 250px;
+        max-width: 200px;
         margin: 10px auto;
     }
 }
