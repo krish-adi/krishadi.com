@@ -9,6 +9,7 @@ import LifeMapCV from "../../../static/assets/life-map-cv.svg";
 export default function HomepageHero() {
     return (
         <div className={clsx("container")}>
+            <p style={{ textAlign: "center", fontFamily: "var(--mono)" }}>My long story, in short...</p>
             <div className={clsx(" ", styles.homepageHero)}>
                 <LifeMap className={styles.lifemap} />
                 <LifeMapCV className={styles.lifemapcv} />

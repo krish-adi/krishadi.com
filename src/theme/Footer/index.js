@@ -1,12 +1,23 @@
 import React from "react";
-import { useThemeConfig} from "@docusaurus/theme-common";
+import { useThemeConfig } from "@docusaurus/theme-common";
 // import FooterLinks from "@theme/Footer/Links";
 // import FooterLogo from "@theme/Footer/Logo";
 // import FooterCopyright from "@theme/Footer/Copyright";
 // import FooterLayout from "@theme/Footer/Layout";
 
+const MailIcon = () => (
+    // Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        className="footerIcon"
+    >
+        <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+    </svg>
+);
+
 const GitHubIcon = () => (
-    // FontAwesome 6
+    // Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 496 512"
@@ -17,7 +28,7 @@ const GitHubIcon = () => (
 );
 
 const LinkinedInIcon = () => (
-    // FontAwesome 6
+    // Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
@@ -28,7 +39,7 @@ const LinkinedInIcon = () => (
 );
 
 const TwitterIcon = () => (
-    // FontAwesome 6
+    // Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
@@ -74,6 +85,12 @@ function Footer() {
                 </div>
 
                 <div>
+                    <a
+                        href="mailto:me@krishadi.com"
+                        style={{ margin: "0 0.5rem" }}
+                    >
+                        <MailIcon />
+                    </a>
                     <a
                         href="https://github.com/krish-adi"
                         style={{ margin: "0 0.5rem" }}

@@ -21,7 +21,7 @@ This command generates static content into the `build` directory and can be serv
 **Deploy the build files to brach `pages`:**
 
 ```
-$ GIT_USER=krish-adi GIT_PASS=$GIT_PASS DEPLOYMENT_BRANCH=pages npm run deploy
+GIT_USER=krish-adi GIT_PASS=$GIT_PASS DEPLOYMENT_BRANCH=pages npm run deploy
 ```
 
 This command is a convenient way to build the website and push to the `pages` branch.
