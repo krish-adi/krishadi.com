@@ -26,6 +26,11 @@ GIT_USER=$GITHUB_USERNAME GIT_PASS=$GITHUB_KEY DEPLOYMENT_BRANCH=pages npm run d
 
 This command is a convenient way to build the website and push to the `pages` branch.
 
+## Images
+
+- Host images using the markdown structure for individual images. https://docusaurus.io/docs/markdown-features/assets
+- Host albums with google photos. 
+
 ## Tools used: 
 
 1. https://tableconvert.com/html-to-json
