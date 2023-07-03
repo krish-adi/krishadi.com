@@ -16,22 +16,14 @@ This command starts a local development server and opens up a browser window. Mo
 $ npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-**Deploy the build files to brach `pages`:**
-
-```
-GIT_USER=$GITHUB_USERNAME GIT_PASS=$GITHUB_KEY DEPLOYMENT_BRANCH=pages npm run deploy
-```
-
-This command is a convenient way to build the website and push to the `pages` branch.
+This command generates static content into the `dist` directory and can be served using any static contents hosting service.
 
 ## Images
 
-- Host images using the markdown structure for individual images. https://docusaurus.io/docs/markdown-features/assets
-- Host albums with google photos. 
+-   Host images using the markdown structure for individual images. https://docusaurus.io/docs/markdown-features/assets
+-   Host albums with google photos.
 
-## Tools used: 
+## Tools used:
 
 1. https://tableconvert.com/html-to-json
 2. https://favicon.io/favicon-converter/
