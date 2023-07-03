@@ -39,18 +39,17 @@ const config = {
                     breadcrumbs: false,
                     showLastUpdateTime: true,
                 },
-                blog: false,
-                // blog: {
-                //     path: "blog",
-                //     routeBasePath: "blog",
-                //     blogSidebarCount: 0,
-                //     blogListComponent: require.resolve(
-                //         "./components/BlogListPage.jsx"
-                //     ),
-                //     blogPostComponent: require.resolve(
-                //         "./components/BlogPostPage.jsx"
-                //     ),
-                // },
+                blog: {
+                    path: "blog",
+                    routeBasePath: "blog",
+                    blogSidebarCount: 0,
+                    blogListComponent: require.resolve(
+                        "./components/BlogListPage.jsx"
+                    ),
+                    blogPostComponent: require.resolve(
+                        "./components/BlogPostPage.jsx"
+                    ),
+                },
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
                 },
@@ -90,6 +89,16 @@ const config = {
                 ],
             },
         ],
+        [
+            "@docusaurus/plugin-ideal-image",
+            {
+                quality: 70,
+                max: 1030, // max resized image's size.
+                min: 640, // min resized image's size. if original is lower, use that size.
+                steps: 2, // the max number of images generated between min and max (inclusive)
+                disableInDev: false,
+            },
+        ],
     ],
 
     themeConfig:
@@ -119,7 +128,7 @@ const config = {
                 items: [
                     { to: "/", label: "Home", position: "right" },
                     { to: "/about", label: "About", position: "right" },
-                    // { to: "/blog", label: "Blog", position: "right" },
+                    { to: "/blog", label: "Blog", position: "right" },
                     {
                         to: "/zettelkasten",
                         label: "Zettelkasten",
