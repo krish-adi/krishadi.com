@@ -8,11 +8,10 @@ export default function Home() {
             description="Personal website of Adithya Krishnan."
         >
             <header
-                className="container sm:px-12 md:px-72 py-10"
+                className="container sm:px-12 md:px-24 lg:px-56 py-10"
                 style={{ fontFamily: "var(--mono)" }}
             >
-                <h1 style={{ display: "none" }}>Hi! I'm Adithya. 👋</h1>
-
+                <h1 className="hidden">Hi! I'm Adithya Krishnan</h1>
                 <h3 style={{ fontFamily: "var(--mono)" }}>
                     Hi! I'm Adithya. 👋
                 </h3>
@@ -22,7 +21,7 @@ export default function Home() {
                 </address>
             </header>
             <main
-                className="container sm:px-12 md:px-72 text-sm"
+                className="container sm:px-12 md:px-24 lg:px-56 text-sm"
                 style={{ fontFamily: "var(--mono)" }}
             >
                 <h4 style={{ fontFamily: "var(--mono)" }} id="posts">

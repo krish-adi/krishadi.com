@@ -339,3 +339,13 @@ article
     > div.admonitionContent_node_modules-\@docusaurus-theme-classic-lib-theme-Admonition-styles-module {
     font-size: 90%;
 }
+
+main > article[itemprop="blogPost"] {
+    max-width: 700px !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+main > article[itemprop="blogPost"] > header > h1 {
+    font-size: calc(var(--ifm-h-font-size) * 1);
+}

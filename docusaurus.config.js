@@ -33,7 +33,6 @@ const config = {
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
                 docs: {
-                    // id: "zettelkasten",
                     path: "zettelkasten",
                     routeBasePath: "zettelkasten",
                     sidebarPath: require.resolve("./sidebarsZettelkasten.js"),
@@ -41,6 +40,17 @@ const config = {
                     showLastUpdateTime: true,
                 },
                 blog: false,
+                // blog: {
+                //     path: "blog",
+                //     routeBasePath: "blog",
+                //     blogSidebarCount: 0,
+                //     blogListComponent: require.resolve(
+                //         "./components/BlogListPage.jsx"
+                //     ),
+                //     blogPostComponent: require.resolve(
+                //         "./components/BlogPostPage.jsx"
+                //     ),
+                // },
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
                 },
@@ -64,17 +74,6 @@ const config = {
                 },
             };
         },
-        // [
-        //     "@docusaurus/plugin-content-docs",
-        //     {
-        //         id: "blog",
-        //         path: "blog",
-        //         routeBasePath: "blog",
-        //         sidebarPath: require.resolve("./sidebarsBlog.js"),
-        //         breadcrumbs: false,
-        //         showLastUpdateTime: true,
-        //     },
-        // ],
         [
             "@docusaurus/plugin-client-redirects",
             {
@@ -100,7 +99,7 @@ const config = {
                 {
                     name: "keywords",
                     content:
-                        "snowflake, sql, machine, learning, python, data, warehouse",
+                        "snowflake, sql, machine learning, python, data warehouse, large language models, prompt, prompt engineering",
                 },
                 {
                     name: "description",
@@ -120,13 +119,12 @@ const config = {
                 items: [
                     { to: "/", label: "Home", position: "right" },
                     { to: "/about", label: "About", position: "right" },
-                    { to: "/blog", label: "Blog", position: "right" },
+                    // { to: "/blog", label: "Blog", position: "right" },
                     {
                         to: "/zettelkasten",
                         label: "Zettelkasten",
                         position: "right",
                     },
-
                     {
                         href: "https://github.com/krish-adi",
                         label: "GitHub",
