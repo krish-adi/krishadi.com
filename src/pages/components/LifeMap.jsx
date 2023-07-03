@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import styles from "./HomepageStyles.module.css";
+import styles from "./LifeMap.module.css";
 
 import LifeMap from "../../../static/assets/life-map.svg";
 import LifeMapCV from "../../../static/assets/life-map-cv.svg";

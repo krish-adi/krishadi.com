@@ -1,7 +1,5 @@
 import React from "react";
 import Layout from "@theme/Layout";
-import clsx from "clsx";
-import styles from "./components/HomepageStyles.module.css";
 
 export default function Home() {
     return (
@@ -31,6 +29,20 @@ export default function Home() {
                     Projects
                 </h4>
 
+                <p>
+                    <a href="https://querystar.io/">QueryStar</a>
+                    <span className="pl-1">:</span>
+                    <span className="pl-3">
+                        AI-Assisted Metrics Store and Analysis Automation.
+                    </span>
+                </p>
+                <p>
+                    <a href="https://github.com/pdx-labs/pdx">P D X</a>
+                    <span className="pl-1">:</span>
+                    <span className="pl-3">
+                        Prompt Engineering and Dev-Ops toolkit.
+                    </span>
+                </p>
                 <p>
                     <a href="https://modelstar.io/">Modelstar</a>
                     <span className="pl-1">:</span>
