@@ -37,7 +37,6 @@ const config = {
                     path: "zettelkasten",
                     routeBasePath: "zettelkasten",
                     sidebarPath: require.resolve("./sidebarsZettelkasten.js"),
-                    editUrl: "https://github.com/krish-adi",
                     breadcrumbs: false,
                     showLastUpdateTime: true,
                 },
@@ -53,17 +52,17 @@ const config = {
     ],
 
     plugins: [
-        [
-            "@docusaurus/plugin-content-docs",
-            {
-                id: "blog",
-                path: "blog",
-                routeBasePath: "blog",
-                sidebarPath: require.resolve("./sidebarsBlog.js"),
-                breadcrumbs: false,
-                showLastUpdateTime: true,
-            },
-        ],
+        // [
+        //     "@docusaurus/plugin-content-docs",
+        //     {
+        //         id: "blog",
+        //         path: "blog",
+        //         routeBasePath: "blog",
+        //         sidebarPath: require.resolve("./sidebarsBlog.js"),
+        //         breadcrumbs: false,
+        //         showLastUpdateTime: true,
+        //     },
+        // ],
     ],
 
     themeConfig:

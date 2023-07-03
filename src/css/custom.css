@@ -5,6 +5,8 @@
 * Secondary: #AF3BEA -> HSL: 280°, 81%, 57% 
 */
 
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
 :root {
     --yellow: #ffd848;
     --purple: #6e00f5;
@@ -23,7 +25,7 @@
     --site-color-checkbox-checked-bg: hsl(167deg 56% 73% / 25%);
     --site-color-feedback-background: #fff;
 
-    --ifm-code-font-size: 95%;
+    --ifm-code-font-size: 85%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
     /* Use a darker color to ensure contrast, ideally we don't need important */
     --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
@@ -34,10 +36,11 @@
     --ifm-navbar-height: 4rem;
     --ifm-navbar-shadow: none;
 
-    --ifm-global-radius: 2.5px;
+    --ifm-global-radius: 0px;
 
-    --ifm-alert-padding-horizontal: 1rem;
-    --ifm-alert-padding-vertical: 0.5rem;
+    --ifm-alert-border-left-width: 3px;
+    --ifm-alert-padding-horizontal: 0.2rem 1rem;
+    --ifm-alert-padding-vertical: 0.5rem 0.5rem;
 
     --ifm-h-font-size: 2rem;
     --ifm-heading-font-weight: var(--ifm-font-weight-semibold);
@@ -53,18 +56,28 @@
     --ifm-h5-font-size: calc(var(--ifm-h-font-size) * 0.4375);
     --ifm-h6-font-size: calc(var(--ifm-h-font-size) * 0.524);
 
-    /* --ifm-font-family-base: var(--sans); */
-    --ifm-font-family-serif: var(--serif);
-    /* --ifm-font-family-monospace: var(--mono); */
+    --ifm-table-head-font-weight: 500;
+    --ifm-table-cell-padding: 0.4rem 0.8rem;
 
     --ifm-code-font-size: 80%;
     --ifm-pre-line-height: 1.5;
 
     --sans: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Helvetica Neue,
         sans-serif;
+    /* --sans: IBM Plex Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+        Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol"; */
+
     --serif: IBM Plex Serif, Tiempos, serif;
     --mono: GT America Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
         monospace;
+    /* --mono: IBM Plex Mono, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace; */
+
+    /* --ifm-font-family-base: var(--sans); */
+    --ifm-font-family-serif: var(--serif);
+    /* --ifm-font-family-monospace: var(--mono); */
 }
 
 .markdown > h1:first-child {
@@ -81,6 +94,14 @@
 
 .markdown > h3 {
     --ifm-h3-font-size: calc(var(--ifm-h-font-size) * 0.625);
+}
+
+.markdown > table {
+    font-size: small;
+}
+
+.markdown > p > strong {
+    font-weight: var(--ifm-font-weight-semibold) !important;
 }
 
 .markdown > div.theme-code-block {
@@ -239,7 +260,7 @@ a.menu__link.menu__link--active {
     /* color: var(--ifm-color-content); */
     font-weight: var(--ifm-font-weight-semibold);
     font-size: calc(var(--ifm-font-size-base));
-    padding-left: 0.5rem;
+    /* padding-left: 0.5rem; */
 }
 
 li.theme-doc-sidebar-item-link.menu__list-item > a.menu__link {
@@ -283,4 +304,34 @@ nav.pagination-nav > a.pagination-nav__link > div.pagination-nav__label {
 
 .footerIcon:hover {
     fill: var(--ifm-color-content-secondary);
+}
+
+.tabs__item {
+    border-width: 2px;
+    font-weight: var(--ifm-font-weight-semibold);
+    font-size: calc(var(--ifm-font-size-base) * 0.8);
+}
+
+article
+    > div.theme-doc-markdown.markdown
+    > div.theme-admonition
+    > div.admonitionHeading_node_modules-\@docusaurus-theme-classic-lib-theme-Admonition-styles-module
+    > span
+    > svg {
+    height: 15px;
+    width: 15px;
+}
+
+article
+    > div.theme-doc-markdown.markdown
+    > div.theme-admonition
+    > div.admonitionHeading_node_modules-\@docusaurus-theme-classic-lib-theme-Admonition-styles-module {
+    font-size: 80%;
+}
+
+article
+    > div.theme-doc-markdown.markdown
+    > div.theme-admonition
+    > div.admonitionContent_node_modules-\@docusaurus-theme-classic-lib-theme-Admonition-styles-module {
+    font-size: 90%;
 }
