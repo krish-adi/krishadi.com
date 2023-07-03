@@ -63,6 +63,22 @@ const config = {
         //         showLastUpdateTime: true,
         //     },
         // ],
+        [
+            "@docusaurus/plugin-client-redirects",
+            {
+                redirects: [
+                    // /docs/oldDoc -> /docs/newDoc
+                    {
+                        to: "/zettelkasten/tutorials/greppo-introduction",
+                        from: "/blog/greppo-introduction",
+                    },
+                    {
+                        to: "/zettelkasten/tutorials/gee-greppo",
+                        from: "/blog/gee-greppo",
+                    },
+                ],
+            },
+        ],
     ],
 
     themeConfig:
@@ -91,6 +107,7 @@ const config = {
 
                 items: [
                     { to: "/", label: "Home", position: "right" },
+                    { to: "/about", label: "About", position: "right" },
                     { to: "/blog", label: "Blog", position: "right" },
                     {
                         to: "/zettelkasten",

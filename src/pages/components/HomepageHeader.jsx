@@ -5,6 +5,7 @@ import styles from "./HomepageStyles.module.css";
 export default function HomepageHeader() {
     return (
         <header className={clsx("container")}>
+            <h1 style={{ display: "none" }}>Hi! I'm Adithya. 👋</h1>
             <div className={clsx(" ", styles.homepageHeader)}>
                 <div className={clsx(" ", styles.category)}>
                     <h3 style={{ fontFamily: "var(--mono)" }}>
@@ -12,48 +13,53 @@ export default function HomepageHeader() {
                     </h3>
                     <p>Engineer, Developer, Climber, Scientist</p>
                     <address>
-                        <a
-                            className={clsx(styles.homepageLink)}
-                            href="mailto:me@krishadi.com"
-                        >
-                            me@krishadi.com
-                        </a>
+                        <a href="mailto:me@krishadi.com">me@krishadi.com</a>
                     </address>
                 </div>
 
                 <p className={clsx(" ", styles.category)}>
                     <a
-                        className={clsx(styles.homepageLink)}
-                        style={{ marginRight: "1.5rem", display: "inline-block" }}
-                        href="/me"
+                        style={{
+                            marginRight: "1.5rem",
+                            display: "inline-block",
+                        }}
+                        href="/about"
                     >
                         About-me
                     </a>
                     <a
-                        className={clsx(styles.homepageLink)}
-                        style={{ marginRight: "1.5rem", display: "inline-block" }}
+                        style={{
+                            marginRight: "1.5rem",
+                            display: "inline-block",
+                        }}
                         href="/cv"
                     >
                         CV
                     </a>
 
                     <a
-                        className={clsx(styles.homepageLink)}
-                        style={{ marginRight: "1.5rem", display: "inline-block" }}
+                        style={{
+                            marginRight: "1.5rem",
+                            display: "inline-block",
+                        }}
                         href="https://github.com/krish-adi"
                     >
                         GitHub
                     </a>
                     <a
-                        className={clsx(styles.homepageLink)}
-                        style={{ marginRight: "1.5rem", display: "inline-block" }}
+                        style={{
+                            marginRight: "1.5rem",
+                            display: "inline-block",
+                        }}
                         href="https://www.linkedin.com/in/adithyakrishnan/"
                     >
                         LinkedIn
                     </a>
                     <a
-                        className={clsx(styles.homepageLink)}
-                        style={{ marginRight: "1.5rem", display: "inline-block" }}
+                        style={{
+                            marginRight: "1.5rem",
+                            display: "inline-block",
+                        }}
                         href="https://twitter.com/krish_adi_"
                     >
                         Twitter
