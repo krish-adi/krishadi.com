@@ -10,7 +10,7 @@ export default function HomepageHero() {
     return (
         <div className={clsx("container")} style={{ marginBottom: "2rem" }}>
             <p style={{ textAlign: "center", fontFamily: "var(--mono)" }}>
-                My long story, in short...
+                I've moved a bit, lived here and there...
             </p>
             <div className={clsx(" ", styles.homepageHero)}>
                 <LifeMap className={styles.lifemap} />
