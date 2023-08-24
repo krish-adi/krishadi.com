@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
+import LifeMap from "./components/LifeMap";
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
                     <a href="mailto:me@krishadi.com">me@krishadi.com</a>
                 </address>
             </header>
+            <LifeMap />
             <main
                 className="container sm:px-12 md:px-24 lg:px-56 text-sm"
                 style={{ fontFamily: "var(--mono)" }}

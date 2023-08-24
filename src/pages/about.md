@@ -13,8 +13,6 @@ Hey there 👋 !
 
 I am Adithya. There are quite a few things that interest me, a lot! To put things into perspective, here is my story, where I try to connect the dots.
 
-<LifeMap />
-
 When I was a kid, I broke a lot of things at home, out of curiosity to understand how things worked. Watches, radios, projectors, toys (all of them, some 3 or 4 I had ended up in pieces), cameras. When I was about 10, my mom bought me an electronics hobby kit (best birthday gift no. 1). At its core, it had an IC 555 a typical timer circuit, along with it a bunch of transistors, resistors, diodes, switches and a reusable breadbord with wires. I learnt so much from it, by replicating the circuits from the book that came along with it and ofcourse by messing around with connections just to see what would happend, or most importantly why nothing happend.
 
 I started learning western classical music with the EKB (electronic keyboard, piano). It was fascinating to learn, how people had discovered structures in music, understanding how combination of pitches and tones worked, how beauty in music is created by adding imperfections. I even managed to pass a few trinity college exams, upto Grade 5. This gave me some context to start being curious about Indian classical music, especially carnatic music. Delving intro trying to understand how ragas worked, how thalam worked, the rhythm came together. Although, I wish I had a carnatic teacher, who would have probably taught me what all the ragas and thalams were there, how to recognize them (I am very bad at recognizing tones), I may have not enjoyed it so much. I was more curious about the 'why', rather than the 'what'. I wasn't so much interested in what ragas were there, but more into why were ragas, how does it relate to the music it created.
@@ -32,3 +30,5 @@ I started building websites at 12, playing around with html and css. I first hos
 I also work on AI/ML projects that make use of Tensorflow. Currently, I am working on a service that is looking to provide a context aware consumer experience when searching for and buying clothes. Somewhere, in the intersection between AI and E-Commerce. More on that later...
 
 I also love to climb. I have climbed around the world, rock and ice, sport, alpine and trad. Some of my favorite places are the Dolomites in Italy, Sanstone of Berdorf, Cracks in Basalt at Ettringen, Limestones of Freyr. In 2021, I climbed a total of 2900m of rock face in 7 days in the Dolomites.
+
+<LifeMap />
