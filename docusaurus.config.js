@@ -117,8 +117,9 @@ const config = {
                 },
 
                 items: [
-                    { to: "/", label: "Home", position: "right" },
+                    { to: "/", label: "Home", position: "right", activeBaseRegex: '^/$' },
                     { to: "/about", label: "About", position: "right" },
+                    { to: "/projects", label: "Projects", position: "right" },
                     // { to: "/blog", label: "Blog", position: "right" },
                     {
                         to: "/zettelkasten",
