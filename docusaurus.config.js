@@ -46,7 +46,7 @@ const config = {
                 docs: {
                     path: "posts",
                     routeBasePath: "posts",
-                    sidebarPath: require.resolve("./sidebarsZettelkasten.js"),
+                    sidebarPath: require.resolve("./postsSidebar.js"),
                     breadcrumbs: false,
                     showLastUpdateTime: true,
                 },
