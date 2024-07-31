@@ -46,7 +46,7 @@ const config = {
                 docs: {
                     path: "posts",
                     routeBasePath: "posts",
-                    sidebarPath: require.resolve("./postsSidebar.js"),
+                    sidebarPath: require.resolve("./sidebarsPosts.js"),
                     breadcrumbs: false,
                     showLastUpdateTime: true,
                 },

@@ -1,6 +1,6 @@
 ---
 slug: greppo-introduction
-title: Greppo introduction
+title: Greppo - a geospatial app framework
 description: Build a geospatial dashboard in Python using Greppo
 published: 2/24/2022
 last_update:

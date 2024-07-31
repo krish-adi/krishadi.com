@@ -1,6 +1,6 @@
 ---
 slug: /rheology
-title: Rheology
+title: Understanding Rheology
 description: Rheological characterisation of fluids
 published: 1/26/2022
 last_update:
