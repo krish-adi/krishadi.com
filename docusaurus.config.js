@@ -32,13 +32,20 @@ const config = {
             "classic",
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
+                // docs: {
+                //     path: "zettelkasten",
+                //     routeBasePath: "zettelkasten",
+                //     sidebarPath: require.resolve("./sidebarsZettelkasten.js"),
+                //     breadcrumbs: false,
+                //     showLastUpdateTime: true,
+                // },                
                 docs: {
-                    path: "zettelkasten",
-                    routeBasePath: "zettelkasten",
+                    path: "posts",
+                    routeBasePath: "posts",
                     sidebarPath: require.resolve("./sidebarsZettelkasten.js"),
                     breadcrumbs: false,
                     showLastUpdateTime: true,
-                },
+                },                
                 blog: false,
                 // blog: {
                 //     path: "blog",
