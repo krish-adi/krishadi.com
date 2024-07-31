@@ -11,7 +11,7 @@ const config = {
     title: "Adithya Krishnan",
     tagline: "What I do, know, learnt, practice...",
     favicon: "img/favicon.ico",
-    
+
     // production url site settings here
     url: "https://krishadi.com.com",
     baseUrl: "/",
@@ -36,13 +36,6 @@ const config = {
             "classic",
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
-                // docs: {
-                //     path: "zettelkasten",
-                //     routeBasePath: "zettelkasten",
-                //     sidebarPath: require.resolve("./sidebarsZettelkasten.js"),
-                //     breadcrumbs: false,
-                //     showLastUpdateTime: true,
-                // },
                 docs: {
                     path: "posts",
                     routeBasePath: "posts",
@@ -134,14 +127,13 @@ const config = {
                         position: "right",
                         activeBaseRegex: "^/$",
                     },
-                    { to: "/about", label: "About", position: "right" },
-                    { to: "/projects", label: "Projects", position: "right" },
-                    // { to: "/blog", label: "Blog", position: "right" },
                     {
-                        to: "/zettelkasten",
-                        label: "Zettelkasten",
+                        to: "/posts",
+                        label: "Posts",
                         position: "right",
                     },
+                    { to: "/about", label: "About", position: "right" },
+                    { to: "/projects", label: "Projects", position: "right" },                    
                     {
                         href: "https://github.com/krish-adi",
                         label: "GitHub",
