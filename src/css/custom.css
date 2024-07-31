@@ -261,10 +261,10 @@ ul.theme-doc-sidebar-menu.menu__list
     > li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-1.menu__list-item:first-child
     > a.menu__link,
 a.menu__link.menu__link--active {
-    /* color: var(--ifm-color-content); */
-    font-weight: var(--ifm-font-weight-semibold);
+    color: var(--ifm-color-content);
+    /* font-weight: var(--ifm-font-weight-semibold); */
     font-size: calc(var(--ifm-font-size-base));
-    /* padding-left: 0.5rem; */
+    padding-left: 0.5rem;
 }
 
 li.theme-doc-sidebar-item-link.menu__list-item > a.menu__link {
