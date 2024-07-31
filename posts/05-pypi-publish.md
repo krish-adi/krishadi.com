@@ -5,6 +5,8 @@ description: Deep-learning quick reference cheat sheet
 published: 4/21/2022
 last_update:
     date: 4/26/2022
+tags:
+    - zettelkasten
 draft: true
 ---
 

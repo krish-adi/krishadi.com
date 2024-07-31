@@ -5,7 +5,9 @@ description: Geospatial app with Google Earth Engine and Greppo
 published: 3/20/2022
 last_update:
     date: 3/20/2022
-tags: [greppo, gee, demo, tutorial]
+# tags: [greppo, gee, demo, tutorial]
+tags:
+    - tutorials
 ---
 
 import GitHubGist from "../components/GitHubGist";

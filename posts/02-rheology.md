@@ -5,6 +5,8 @@ description: Rheological characterisation of fluids
 published: 1/26/2022
 last_update:
     date: 2/21/2022
+tags:
+    - zettelkasten
 ---
 
 # Rheology

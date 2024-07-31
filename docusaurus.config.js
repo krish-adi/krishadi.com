@@ -78,22 +78,22 @@ const config = {
                 },
             };
         },
-        [
-            "@docusaurus/plugin-client-redirects",
-            {
-                redirects: [
-                    // /docs/oldDoc -> /docs/newDoc
-                    {
-                        to: "/zettelkasten/tutorials/greppo-introduction",
-                        from: "/blog/greppo-introduction",
-                    },
-                    {
-                        to: "/zettelkasten/tutorials/gee-greppo",
-                        from: "/blog/gee-greppo",
-                    },
-                ],
-            },
-        ],
+        // [
+        //     "@docusaurus/plugin-client-redirects",
+        //     {
+        //         redirects: [
+        //             // /docs/oldDoc -> /docs/newDoc
+        //             {
+        //                 to: "/zettelkasten/tutorials/greppo-introduction",
+        //                 from: "/blog/greppo-introduction",
+        //             },
+        //             {
+        //                 to: "/zettelkasten/tutorials/gee-greppo",
+        //                 from: "/blog/gee-greppo",
+        //             },
+        //         ],
+        //     },
+        // ],
     ],
 
     themeConfig:
@@ -130,6 +130,11 @@ const config = {
                     {
                         to: "/posts",
                         label: "Posts",
+                        position: "right",
+                    },
+                    {
+                        to: "/posts/tags",
+                        label: "Tags",
                         position: "right",
                     },
                     { to: "/about", label: "About", position: "right" },

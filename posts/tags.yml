@@ -1,0 +1,9 @@
+zettelkasten:
+  label: 'Zettelkasten'
+  permalink: '/zettelkasten'
+  description: 'A collection of knokwledge I have gathered over the years. This is an attempt to capture them, primarily to serve as a reference for myself. However, I hope it is also useful to others.'
+
+tutorials:
+  label: 'Tutorials'
+  permalink: '/tutorials'
+  description: 'Some general tutorials on stuff I have built or ones I like.'

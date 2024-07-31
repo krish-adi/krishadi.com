@@ -5,7 +5,9 @@ description: Build a geospatial dashboard in Python using Greppo
 published: 2/24/2022
 last_update:
     date: 2/24/2022
-tags: [greppo, demo, tutorial]
+# tags: [greppo, demo, tutorial]
+tags:
+    - tutorials
 ---
 
 import GitHubGist from "../components/GitHubGist";

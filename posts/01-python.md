@@ -5,6 +5,8 @@ description: A quickstart to using and managing Python environments
 published: 11/24/2021
 last_update:
     date: 1/26/2022
+tags:
+    - zettelkasten
 ---
 
 # Python Environments
