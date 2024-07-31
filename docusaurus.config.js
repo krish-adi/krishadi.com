@@ -1,18 +1,22 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: "Adithya Krishnan",
     tagline: "What I do, know, learnt, practice...",
+    favicon: "img/favicon.ico",
+    
+    // production url site settings here
     url: "https://krishadi.com.com",
     baseUrl: "/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
-    favicon: "img/favicon.ico",
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
@@ -38,14 +42,14 @@ const config = {
                 //     sidebarPath: require.resolve("./sidebarsZettelkasten.js"),
                 //     breadcrumbs: false,
                 //     showLastUpdateTime: true,
-                // },                
+                // },
                 docs: {
                     path: "posts",
                     routeBasePath: "posts",
                     sidebarPath: require.resolve("./sidebarsZettelkasten.js"),
                     breadcrumbs: false,
                     showLastUpdateTime: true,
-                },                
+                },
                 blog: false,
                 // blog: {
                 //     path: "blog",
@@ -124,7 +128,12 @@ const config = {
                 },
 
                 items: [
-                    { to: "/", label: "Home", position: "right", activeBaseRegex: '^/$' },
+                    {
+                        to: "/",
+                        label: "Home",
+                        position: "right",
+                        activeBaseRegex: "^/$",
+                    },
                     { to: "/about", label: "About", position: "right" },
                     { to: "/projects", label: "Projects", position: "right" },
                     // { to: "/blog", label: "Blog", position: "right" },
@@ -144,8 +153,8 @@ const config = {
                 copyright: `Adithya Krishnan`,
             },
             prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
+                theme: prismThemes.github,
+                darkTheme: prismThemes.dracula,
             },
         }),
 };
